@@ -1,12 +1,13 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
- 
-namespace DesignPatterns
+
+//Whole point of Single Responsibility Principle is that one, typical class is responsible for one thing and has one reason to change. 
+//Don't put all responsibility to one class
+namespace DesignPatterns.TheSOLIDDesignPrinciples
 {
     public class Journal
     {
@@ -36,25 +37,6 @@ namespace DesignPatterns
         {
             if (overwrite || !File.Exists(filename))
                 File.WriteAllText(filename, j.ToString());
-        }
-    }
-    //Whole point of Single Responsibility Principle is that one, typical class is responsible for one thing and has one reason to change. 
-    //Don't put all responsibility to one class
-    class SingleResponsibilityPrinciple 
-    {
-        static void Main(string[] args)
-        {
-            var j = new Journal();
-            j.AddEntry("Entry 1");
-            j.AddEntry("Entry 2");
-            Console.WriteLine(j);
-
-            //var p = new Persistence();
-            //var filename = @"c:\temp\journal.txt";
-            //p.SaveToFile(j, filename, true);
-            //Process.Start(filename);
-
-            Console.ReadKey();
         }
     }
 }
