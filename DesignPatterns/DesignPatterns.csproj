@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TheSOLIDDesignPrinciples\Open-ClosedPrinciple.cs" />
     <Compile Include="TheSOLIDDesignPrinciples\SingleResponsibilityPrinciple.cs" />
   </ItemGroup>
   <ItemGroup>
