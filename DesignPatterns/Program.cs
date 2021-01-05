@@ -65,7 +65,9 @@ namespace DesignPatterns
             //sq.Width = 4;
             //Console.WriteLine($"{sq} has area {Area(sq)}");
             ////}
+            //04 Interface Segregation Principle {
 
+            //}
             Console.ReadKey();
         }
 
