@@ -67,6 +67,9 @@ namespace DesignPatterns
             ////}
             //04 Interface Segregation Principle {
             //}
+
+            //05 Dependency Inversion Principle{
+            //}
             Console.ReadKey();
         }
 
