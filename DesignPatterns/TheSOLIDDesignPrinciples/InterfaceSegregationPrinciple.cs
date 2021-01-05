@@ -87,7 +87,20 @@ namespace DesignPatterns.TheSOLIDDesignPrinciples
             this.scanner = scanner;
         }
 
+        public void Fax(Document d)
+        {
+            throw new NotImplementedException();
+        }
 
+        public void Print(Document d)
+        {
+            printer.Print(d);
+        }
+
+        public void Scan(Document d)
+        {
+            scanner.Scan(d);
+        }
     }
 
     class InterfaceSegregationPrinciple
