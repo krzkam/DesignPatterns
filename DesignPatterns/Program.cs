@@ -26,7 +26,7 @@ namespace DesignPatterns
             //Process.Start(filename);
             ////}
 
-            ////02 Open-Closed Principle
+            ////02 Open-Closed Principle {
             //var apple = new Product("Apple", Color.Green, Size.Small);
             //var tree = new Product("Tree", Color.Green, Size.Large);
             //var house = new Product("House", Color.Blue, Size.Large);
@@ -55,7 +55,22 @@ namespace DesignPatterns
             //{
             //    Console.WriteLine($" - {p.Name} is Large and Blue");
             //}
+            ////}
+
+            ////03 Liskov Substitution Principle p1 {
+            //Rectangle rc = new Rectangle(2,3);
+            //Console.WriteLine($"{rc} has area {Area(rc)}");
+
+            //Rectangle sq = new Square(); //holding Rectangle reference to a Square
+            //sq.Width = 4;
+            //Console.WriteLine($"{sq} has area {Area(sq)}");
+            ////}
+
             Console.ReadKey();
         }
+
+        ////03 Liskov Substitution Principle p2 {
+        //static public int Area(Rectangle r) => r.Width * r.Height;
+        ////}
     }
 }
