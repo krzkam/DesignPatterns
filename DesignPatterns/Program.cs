@@ -104,11 +104,12 @@ namespace DesignPatterns
             //}
 
             // 07 Builder {
+
             // we'd rather this whole thing with html was presented in some kind three, structured format. 
             //This is the reason that we'd like to want some kind of HTML BUILDER, so that we can build up different HTML objects with nice API
+            // 08 Fluent builder (interface): interface which allows you to chain several calls by returning a reference to the object you're working with
             var builder = new HtmlBuilder("ul");
-            builder.AddChild("li", "hello");
-            builder.AddChild("li", "world");
+            builder.AddChild("li", "hello").AddChild("li", "world");
             Console.WriteLine(builder.ToString());
             //}
 
