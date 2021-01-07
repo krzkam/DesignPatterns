@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Builder\Exercise.cs" />
     <Compile Include="Builder\FacetedBuilder.cs" />
     <Compile Include="Builder\FluentBuilderInheritanceWithRecursiveGenerics.cs" />
     <Compile Include="Builder\FunctionalBuilder.cs" />

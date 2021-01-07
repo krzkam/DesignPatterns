@@ -121,6 +121,10 @@ namespace DesignPatterns
             //    Lives.At("Grudziadzka").In("Torun").WithPostCode("87-100");
             //Console.WriteLine(person3);
             ////}
+            //Builder Excercise
+            var cb = new CodeBuilder("Person").AddField("Name","string").AddField("Age","int");
+            Console.WriteLine(cb);
+
             Console.ReadKey();
 
 
@@ -155,4 +159,6 @@ namespace DesignPatterns
         ////}
 
     }
+
+
 }
