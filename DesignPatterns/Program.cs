@@ -65,10 +65,23 @@ namespace DesignPatterns
             //sq.Width = 4;
             //Console.WriteLine($"{sq} has area {Area(sq)}");
             ////}
-            //04 Interface Segregation Principle {
+            ////04 Interface Segregation Principle {
             //}
 
-            //05 Dependency Inversion Principle{
+            //05 Dependency Inversion Principle p1{
+            //high-level module
+
+            var parent = new Person { Name = "John" };
+            var child1 = new Person { Name = "Chris" };
+            var child2 = new Person { Name = "Mary" };
+
+            var relationships = new Relationshps();
+            relationships.AddParentAndChild(parent, child1);
+            relationships.AddParentAndChild(parent, child2);
+            //new Program(relationships);
+            new Program(relationships);
+
+
             //}
             Console.ReadKey();
         }
@@ -76,5 +89,31 @@ namespace DesignPatterns
         ////03 Liskov Substitution Principle p2 {
         //static public int Area(Rectangle r) => r.Width * r.Height;
         ////}
+        ///
+
+        //05 Dependency Inversion Principle p2{
+        //high-level module
+        //public Program(Relationshps relationshps)
+        //{
+        //    var relations = relationshps.relationsPublic;
+        //    foreach (var r in relations.Where(
+        //        x => x.Item1.Name == "John" &&
+        //        x.Item2 == Relationship.Parent
+        //        ))
+        //    {
+        //        Console.WriteLine($"Johnk has a child called {r.Item3.Name}");
+        //    }
+        //}
+
+        //better way: we can build another constructor, but this time we don't depend on Relationships instead we depend on interface
+        public Program(IRelationshipBrowser browser)
+        {
+            foreach (var p in browser.FindAllChildrenOf("John"))
+            {
+                Console.WriteLine($"Johnk has a child called {p.Name}");
+            }
+        }
+        //}
+
     }
 }
