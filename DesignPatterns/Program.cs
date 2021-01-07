@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DesignPatterns.TheSOLIDDesignPrinciples;
+//using DesignPatterns.TheSOLIDDesignPrinciples;
 using DesignPatterns.Builder;
 
 namespace DesignPatterns
@@ -25,7 +25,6 @@ namespace DesignPatterns
             //p.SaveToFile(j, filename, true); 
             //Process.Start(filename);
             ////}
-
             ////02 Open-Closed Principle {
             //var apple = new Product("Apple", Color.Green, Size.Small);
             //var tree = new Product("Tree", Color.Green, Size.Large);
@@ -56,7 +55,6 @@ namespace DesignPatterns
             //    Console.WriteLine($" - {p.Name} is Large and Blue");
             //}
             ////}
-
             ////03 Liskov Substitution Principle p1 {
             //Rectangle rc = new Rectangle(2,3);
             //Console.WriteLine($"{rc} has area {Area(rc)}");
@@ -67,7 +65,6 @@ namespace DesignPatterns
             ////}
             ////04 Interface Segregation Principle {
             //}
-
             ////05 Dependency Inversion Principle p1{
             ////high-level module
 
@@ -110,8 +107,9 @@ namespace DesignPatterns
             //builder.AddChild("li", "hello").AddChild("li", "world");
             //Console.WriteLine(builder.ToString());
             ////}
-
-
+            //09 Fluent Builder Inheritance with Recursive Generics
+            var me = Person.New.Called("John").WorksAsA("Programmer").Build();
+            Console.WriteLine(me);
             Console.ReadKey();
         }
 
