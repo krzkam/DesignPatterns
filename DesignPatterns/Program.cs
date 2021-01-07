@@ -108,12 +108,19 @@ namespace DesignPatterns
             //Console.WriteLine(builder.ToString());
             ////}
             //09 Fluent Builder Inheritance with Recursive Generics {
-            var me = Person.New.Called("John").WorksAsA("Programmer").Build();
-            Console.WriteLine(me);
-            //}
-            //10 Functional Builder {
+            //var me = Person.New.Called("John").WorksAsA("Programmer").Build();
+            //Console.WriteLine(me);
+            ////}
+            ////10 Functional Builder {
             //var person = new PersonBuilder2().Called("Sarah").WorksAs("Developer").Build();
             ////}
+            //11 Faceted Builder{
+            var pb = new PersonBuilder3();
+            Person3 person3 = pb.
+                Works.At("Fabrica").AsA("Engineer").Earning(123000).
+                Lives.At("Grudziadzka").In("Torun").WithPostCode("87-100");
+            Console.WriteLine(person3);
+            //}
             Console.ReadKey();
 
 
