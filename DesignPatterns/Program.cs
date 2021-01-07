@@ -81,37 +81,35 @@ namespace DesignPatterns
             ////new Program(relationships);
             //new Program(relationships);
             ////}
-            // 06 Life Without Builder {            
-            //low-level builder which build the string
-            var hello = "hello";
-            var sb = new StringBuilder();
-            sb.Append("<p>");
-            sb.Append(hello);
-            sb.Append("</p>");
-            Console.WriteLine(sb);
+            //// 06 Life Without Builder {            
+            ////low-level builder which build the string
+            //var hello = "hello";
+            //var sb = new StringBuilder();
+            //sb.Append("<p>");
+            //sb.Append(hello);
+            //sb.Append("</p>");
+            //Console.WriteLine(sb);
 
-            //more complicated:
-            var words = new[] { "hello","world"};
-            sb.Clear();
-            sb.Append("<ul>");
-            foreach (var word in words)
-            {
-                //sb.AppendFormat("<li>{0}</li>",word);
-                sb.Append("<li>"+ word + "</li>");
-            }
-            sb.Append("</ul>");
-            Console.WriteLine(sb);
+            ////more complicated:
+            //var words = new[] { "hello","world"};
+            //sb.Clear();
+            //sb.Append("<ul>");
+            //foreach (var word in words)
+            //{
+            //    //sb.AppendFormat("<li>{0}</li>",word);
+            //    sb.Append("<li>"+ word + "</li>");
             //}
-
-            // 07 Builder {
-
-            // we'd rather this whole thing with html was presented in some kind three, structured format. 
-            //This is the reason that we'd like to want some kind of HTML BUILDER, so that we can build up different HTML objects with nice API
-            // 08 Fluent builder (interface): interface which allows you to chain several calls by returning a reference to the object you're working with
-            var builder = new HtmlBuilder("ul");
-            builder.AddChild("li", "hello").AddChild("li", "world");
-            Console.WriteLine(builder.ToString());
-            //}
+            //sb.Append("</ul>");
+            //Console.WriteLine(sb);
+            ////}
+            //// 07 Builder {
+            //// we'd rather this whole thing with html was presented in some kind three, structured format. 
+            ////This is the reason that we'd like to want some kind of HTML BUILDER, so that we can build up different HTML objects with nice API
+            //// 08 Fluent builder (interface): interface which allows you to chain several calls by returning a reference to the object you're working with
+            //var builder = new HtmlBuilder("ul");
+            //builder.AddChild("li", "hello").AddChild("li", "world");
+            //Console.WriteLine(builder.ToString());
+            ////}
 
 
             Console.ReadKey();
