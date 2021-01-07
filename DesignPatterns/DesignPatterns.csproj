@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Builder\FluentBuilderInheritanceWithRecursiveGenerics.cs" />
+    <Compile Include="Builder\FunctionalBuilder.cs" />
     <Compile Include="Builder\LifeWithoutBuilderAndBuilder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

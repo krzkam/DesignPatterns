@@ -107,10 +107,16 @@ namespace DesignPatterns
             //builder.AddChild("li", "hello").AddChild("li", "world");
             //Console.WriteLine(builder.ToString());
             ////}
-            //09 Fluent Builder Inheritance with Recursive Generics
+            //09 Fluent Builder Inheritance with Recursive Generics {
             var me = Person.New.Called("John").WorksAsA("Programmer").Build();
             Console.WriteLine(me);
+            //}
+            //10 Functional Builder {
+            //var person = new PersonBuilder2().Called("Sarah").WorksAs("Developer").Build();
+            ////}
             Console.ReadKey();
+
+
         }
 
         ////03 Liskov Substitution Principle p2 {
