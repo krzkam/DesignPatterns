@@ -114,13 +114,13 @@ namespace DesignPatterns
             ////10 Functional Builder {
             //var person = new PersonBuilder2().Called("Sarah").WorksAs("Developer").Build();
             ////}
-            //11 Faceted Builder{
-            var pb = new PersonBuilder3();
-            Person3 person3 = pb.
-                Works.At("Fabrica").AsA("Engineer").Earning(123000).
-                Lives.At("Grudziadzka").In("Torun").WithPostCode("87-100");
-            Console.WriteLine(person3);
-            //}
+            ////11 Faceted Builder{
+            //var pb = new PersonBuilder3();
+            //Person3 person3 = pb.
+            //    Works.At("Fabrica").AsA("Engineer").Earning(123000).
+            //    Lives.At("Grudziadzka").In("Torun").WithPostCode("87-100");
+            //Console.WriteLine(person3);
+            ////}
             Console.ReadKey();
 
 
