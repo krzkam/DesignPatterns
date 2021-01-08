@@ -164,6 +164,11 @@ namespace DesignPatterns
             //var drink = machine.MakeDrink();
             //drink.Consume();
             // }
+            //Factories Excercise 
+            var p = new PersonFactory().NewPerson("John");
+            var p2 = new PersonFactory().NewPerson("Andrew");
+            Console.WriteLine(p.ToString());
+            Console.WriteLine(p2.ToString());
 
             Console.ReadKey();
 

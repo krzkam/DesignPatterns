@@ -55,6 +55,7 @@
     <Compile Include="Builder\LifeWithoutBuilderAndBuilder.cs" />
     <Compile Include="Factories\AbstractFactoryAndOpenClosePrinciple.cs" />
     <Compile Include="Factories\AsynchronousFactoryMethod.cs" />
+    <Compile Include="Factories\Excercise.cs" />
     <Compile Include="Factories\Factory.cs" />
     <Compile Include="Factories\InnerFactory.cs" />
     <Compile Include="Factories\PointExample.cs" />
