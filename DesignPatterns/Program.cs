@@ -157,6 +157,13 @@ namespace DesignPatterns
             //var origin = Point3.Origin;
             //var origin2 = Point3.Origin2;
             //// }
+            //15 & 16 AbstractFactory And Open-Close Principle {
+            //var machine = new HotDrinkMachine();
+            ////var drink = machine.MakeDrink(HotDrinkMachine.AvailableDrink.Tea, 100);
+            ////drink.Consume();
+            //var drink = machine.MakeDrink();
+            //drink.Consume();
+            // }
 
             Console.ReadKey();
 

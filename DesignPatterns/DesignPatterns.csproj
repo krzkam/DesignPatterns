@@ -53,6 +53,7 @@
     <Compile Include="Builder\FluentBuilderInheritanceWithRecursiveGenerics.cs" />
     <Compile Include="Builder\FunctionalBuilder.cs" />
     <Compile Include="Builder\LifeWithoutBuilderAndBuilder.cs" />
+    <Compile Include="Factories\AbstractFactoryAndOpenClosePrinciple.cs" />
     <Compile Include="Factories\AsynchronousFactoryMethod.cs" />
     <Compile Include="Factories\Factory.cs" />
     <Compile Include="Factories\InnerFactory.cs" />
