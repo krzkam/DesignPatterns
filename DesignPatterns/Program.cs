@@ -147,6 +147,17 @@ namespace DesignPatterns
             ////await foo.InitAsync();
             //Foo x = await Foo.CreateAsync();            
             //// }
+            ////13 Factory {
+            //var point = PointFactory.NewPolarPoint2(1.0, Math.PI / 2);
+            //Console.WriteLine(point);
+            //// }
+            ////14 Inner Factory
+            //var point = Point3.Factory2.NewPolarPoint2(1.0, Math.PI / 2);
+            //Console.WriteLine(point);
+            //var origin = Point3.Origin;
+            //var origin2 = Point3.Origin2;
+            //// }
+
             Console.ReadKey();
 
 

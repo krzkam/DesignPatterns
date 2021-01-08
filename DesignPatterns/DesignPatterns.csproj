@@ -54,6 +54,8 @@
     <Compile Include="Builder\FunctionalBuilder.cs" />
     <Compile Include="Builder\LifeWithoutBuilderAndBuilder.cs" />
     <Compile Include="Factories\AsynchronousFactoryMethod.cs" />
+    <Compile Include="Factories\Factory.cs" />
+    <Compile Include="Factories\InnerFactory.cs" />
     <Compile Include="Factories\PointExample.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

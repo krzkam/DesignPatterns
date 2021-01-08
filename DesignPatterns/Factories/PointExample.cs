@@ -59,8 +59,4 @@ namespace DesignPatterns.Factories
             return $"{nameof(x)}: {x}, {nameof(y)}: {y}"; 
         }
     }
-
-    class PointExample
-    {
-    }
 }
