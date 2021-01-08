@@ -6,12 +6,14 @@ using System.Text;
 using System.Threading.Tasks;
 //using DesignPatterns.TheSOLIDDesignPrinciples;
 //using DesignPatterns.Builder;
- 
+using DesignPatterns.Factories;
 namespace DesignPatterns
 {
     class Program 
     {
         static void Main(string[] args)
+        ////12 Asynchronous Factory Method p2 {
+        //public static async Task Main(string[] args)
         {
             ////01 Single Responsibility Principle {
 
@@ -136,9 +138,15 @@ namespace DesignPatterns
             //  - A separate function (Factory Method)
             //  - That may exist in a separate class (Factory)
             //  - Can create hierarchy of factories with Abstract Factory
-            //10 Point Example {
-            
-            // }
+            ////11 Factory Method {
+            //var point = Point.NewPolarPoint(1.0, Math.PI / 2);
+            //Console.WriteLine(point);
+            //// }
+            ////12 Asynchronous Factory Method p1 {
+            ////var foo = new Foo();
+            ////await foo.InitAsync();
+            //Foo x = await Foo.CreateAsync();            
+            //// }
             Console.ReadKey();
 
 
