@@ -5,8 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 //using DesignPatterns.TheSOLIDDesignPrinciples;
-using DesignPatterns.Builder;
-
+//using DesignPatterns.Builder;
+ 
 namespace DesignPatterns
 {
     class Program 
@@ -78,7 +78,7 @@ namespace DesignPatterns
             ////new Program(relationships);
             //new Program(relationships);
             ////}
-            //// 06 Life Without Builder {            
+            ////06 Life Without Builder {            
             ////low-level builder which build the string
             //var hello = "hello";
             //var sb = new StringBuilder();
@@ -99,7 +99,7 @@ namespace DesignPatterns
             //sb.Append("</ul>");
             //Console.WriteLine(sb);
             ////}
-            //// 07 Builder {
+            ////07 Builder {
             //// we'd rather this whole thing with html was presented in some kind three, structured format. 
             ////This is the reason that we'd like to want some kind of HTML BUILDER, so that we can build up different HTML objects with nice API
             //// 08 Fluent builder (interface): interface which allows you to chain several calls by returning a reference to the object you're working with
@@ -107,7 +107,7 @@ namespace DesignPatterns
             //builder.AddChild("li", "hello").AddChild("li", "world");
             //Console.WriteLine(builder.ToString());
             ////}
-            //09 Fluent Builder Inheritance with Recursive Generics {
+            ////09 Fluent Builder Inheritance with Recursive Generics {
             //var me = Person.New.Called("John").WorksAsA("Programmer").Build();
             //Console.WriteLine(me);
             ////}
@@ -122,9 +122,23 @@ namespace DesignPatterns
             //Console.WriteLine(person3);
             ////}
             //Builder Excercise
-            var cb = new CodeBuilder("Person").AddField("Name","string").AddField("Age","int");
-            Console.WriteLine(cb);
-
+            //var cb = new CodeBuilder("Person").AddField("Name","string").AddField("Age","int");
+            //Console.WriteLine(cb);
+            //Factories
+            //Factory - component resposible solely for the wholesale (not piecewise) creation of objects)
+            //Motivation:
+            //Object creation logic becomes too convoluted
+            //Constrictor is not descriptive
+            //  - Name mandated by name of containing type
+            //  - Cannot overload with same set of arguments with different names
+            //  - Can turn into 'optional parameter hell'
+            //Object creation can be outsourced to:
+            //  - A separate function (Factory Method)
+            //  - That may exist in a separate class (Factory)
+            //  - Can create hierarchy of factories with Abstract Factory
+            //10 Point Example {
+            
+            // }
             Console.ReadKey();
 
 
