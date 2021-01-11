@@ -200,16 +200,25 @@ namespace DesignPatterns
             //Console.WriteLine(jane);
             ////}
             ////20 Copy Through Serialization {
-            var john = new Person4(new[] { "John", "Smith" }, new Address4("London Road", 123));
-            Console.WriteLine(john);
+            //var john = new Person4(new[] { "John", "Smith" }, new Address4("London Road", 123));
+            //Console.WriteLine(john);
 
-            //var jane = john.DeepCopy();
-            var jane = john.DeepCopyXml();
-            jane.Names[0] = "Jane";
-            jane.Address.HouseNumber = 321;
+            ////var jane = john.DeepCopy();
+            //var jane = john.DeepCopyXml();
+            //jane.Names[0] = "Jane";
+            //jane.Address.HouseNumber = 321;
 
-            Console.WriteLine(jane);
-            //}
+            //Console.WriteLine(jane);
+            ////}
+            //Excercise
+            //var line1 = new Line(new Point(1, 2), new Point(3, 5));
+            //var line2 = line1.DeepCopy();
+            ////line2.Start = new Point(10, 10);
+            //line2.End = new Point(50, line1.End.Y);
+
+            //Console.WriteLine(line1);
+            //Console.WriteLine(line2);
+
             Console.ReadKey();
 
 
