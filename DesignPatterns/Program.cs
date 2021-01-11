@@ -6,7 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 //using DesignPatterns.TheSOLIDDesignPrinciples;
 //using DesignPatterns.Builder;
-using DesignPatterns.Factories;
+//using DesignPatterns.Factories;
+using DesignPatterns.Prototype;
 namespace DesignPatterns
 {
     class Program 
@@ -164,12 +165,51 @@ namespace DesignPatterns
             //var drink = machine.MakeDrink();
             //drink.Consume();
             // }
-            //Factories Excercise 
-            var p = new PersonFactory().NewPerson("John");
-            var p2 = new PersonFactory().NewPerson("Andrew");
-            Console.WriteLine(p.ToString());
-            Console.WriteLine(p2.ToString());
+            ////Factories Excercise 
+            //var p = new PersonFactory().NewPerson("John");
+            //var p2 = new PersonFactory().NewPerson("Andrew");
+            //Console.WriteLine(p.ToString());
+            //Console.WriteLine(p2.ToString());
+            //Prototype
+            //A partially or fully initialized object that you copy (clone) and make use of
+            ////17 ICloneable is Bad {
+            //var john = new Person(new[] { "John","Smith"}, new Address("London Road",123));
+            //Console.WriteLine(john);
 
+            //var jane = (Person)john.Clone();
+            //jane.Address.HouseNumber = 321;
+
+            //Console.WriteLine(jane);
+            ////}
+            ////18 Copy Constructor {
+            //var john = new Person2(new[] { "John", "Smith" }, new Address2("London Road", 123));
+            //Console.WriteLine(john);
+
+            //var jane = new Person2(john);
+            //jane.Address.HouseNumber = 321;
+
+            //Console.WriteLine(jane);
+            ////}
+            ////19 Explicit Deep Copy Interface {
+            //var john = new Person3(new[] { "John", "Smith" }, new Address3("London Road", 123));
+            //Console.WriteLine(john);
+
+            //var jane = john.DeepCopy();
+            //jane.Address.HouseNumber = 321;
+
+            //Console.WriteLine(jane);
+            ////}
+            ////20 Copy Through Serialization {
+            var john = new Person4(new[] { "John", "Smith" }, new Address4("London Road", 123));
+            Console.WriteLine(john);
+
+            //var jane = john.DeepCopy();
+            var jane = john.DeepCopyXml();
+            jane.Names[0] = "Jane";
+            jane.Address.HouseNumber = 321;
+
+            Console.WriteLine(jane);
+            //}
             Console.ReadKey();
 
 

@@ -61,6 +61,10 @@
     <Compile Include="Factories\PointExample.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Prototype\CopyContstructors.cs" />
+    <Compile Include="Prototype\CopyThroughSerialization.cs" />
+    <Compile Include="Prototype\ExplicitDeepCopyInterface.cs" />
+    <Compile Include="Prototype\ICloneableIsBad.cs" />
     <Compile Include="TheSOLIDDesignPrinciples\DependencyInversionPrinciple.cs" />
     <Compile Include="TheSOLIDDesignPrinciples\InterfaceSegregationPrinciple.cs" />
     <Compile Include="TheSOLIDDesignPrinciples\LiskovSubstitutionPrinciple.cs" />
