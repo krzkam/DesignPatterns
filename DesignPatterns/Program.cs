@@ -228,6 +228,9 @@ namespace DesignPatterns
             //22 Testability Issues {
 
             //}
+            //23 Singleton in Dependency Injection{
+
+            //}
             Console.ReadKey();
 
 
