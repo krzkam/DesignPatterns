@@ -231,6 +231,9 @@ namespace DesignPatterns
             //23 Singleton in Dependency Injection{
 
             //}
+            //24 Monostate {
+
+            //}
             Console.ReadKey();
 
 
