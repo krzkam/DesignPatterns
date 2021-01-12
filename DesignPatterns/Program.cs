@@ -231,16 +231,26 @@ namespace DesignPatterns
             //23 Singleton in Dependency Injection{
 
             //}
-            //24 Monostate {
-            
-            var ceo = new CEO();
-            ceo.Name = "Adam Smith";
-            ceo.Age = 55;
+            ////24 Monostate {
+            //var ceo = new CEO();
+            //ceo.Name = "Adam Smith";
+            //ceo.Age = 55;
 
-            var ceo2 = new CEO();
-            Console.WriteLine(ceo2);
-
-            //}
+            //var ceo2 = new CEO();
+            //Console.WriteLine(ceo2);
+            ////}
+            ////25 Per-Thread Singleton {
+            //var t1 = Task.Factory.StartNew(() =>
+            //{
+            //    Console.WriteLine("t1: " + PerThreadSingleton.Instance.Id);
+            //});
+            //var t2 = Task.Factory.StartNew(() =>
+            //{
+            //    Console.WriteLine("t2: " + PerThreadSingleton.Instance.Id);
+            //    Console.WriteLine("t2: " + PerThreadSingleton.Instance.Id);
+            //});
+            //Task.WaitAll(t1, t2);
+            ////}
             Console.ReadKey();
 
 

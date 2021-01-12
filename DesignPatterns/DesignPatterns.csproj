@@ -102,6 +102,7 @@
     <Compile Include="Prototype\ExplicitDeepCopyInterface.cs" />
     <Compile Include="Prototype\ICloneableIsBad.cs" />
     <Compile Include="Singleton\Monostate.cs" />
+    <Compile Include="Singleton\Per-ThreadSingleton.cs" />
     <Compile Include="Singleton\SingletonDependencyInjection.cs" />
     <Compile Include="Singleton\SingletonImplementation.cs" />
     <Compile Include="Singleton\TestabilityIssues.cs" />
