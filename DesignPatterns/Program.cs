@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 //using DesignPatterns.Builder;
 //using DesignPatterns.Factories;
 //using DesignPatterns.Prototype;
+using DesignPatterns.Singleton;
 namespace DesignPatterns
 {
     class Program 
@@ -219,8 +220,14 @@ namespace DesignPatterns
             //Console.WriteLine(line1);
             //Console.WriteLine(line2);
             //Singleton - component which is instantiated only once and which tries to resist the idea of beeing instantiated more than once
+            ////21 Singleton Implementation {
+            //var db = SingletonDatabase.Instance;
+            //var city = "Tokyo";
+            //Console.WriteLine($"{city} has population {db.GetPopulation(city)}");
+            ////}
+            //22 Testability Issues {
 
-
+            //}
             Console.ReadKey();
 
 
