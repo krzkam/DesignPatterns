@@ -218,7 +218,7 @@ namespace DesignPatterns
 
             //Console.WriteLine(line1);
             //Console.WriteLine(line2);
-            //Singleton
+            //Singleton - component which is instantiated only once and which tries to resist the idea of beeing instantiated more than once
 
 
             Console.ReadKey();
