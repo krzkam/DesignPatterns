@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 //using DesignPatterns.TheSOLIDDesignPrinciples;
 //using DesignPatterns.Builder;
 //using DesignPatterns.Factories;
-using DesignPatterns.Prototype;
+//using DesignPatterns.Prototype;
 namespace DesignPatterns
 {
     class Program 
@@ -218,6 +218,8 @@ namespace DesignPatterns
 
             //Console.WriteLine(line1);
             //Console.WriteLine(line2);
+            //Singleton
+
 
             Console.ReadKey();
 
