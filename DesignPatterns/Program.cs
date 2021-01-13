@@ -317,6 +317,13 @@ namespace DesignPatterns
 
             //}
             ////}
+            //Exercise
+            //var sq = new Square();
+            //sq.Side = 10;
+            ////Console.WriteLine(sq.Side);
+            //var adapter = new SquareToRectangleAdapter(sq);
+            //Console.WriteLine(adapter.Area());
+
             Console.ReadKey();
 
 

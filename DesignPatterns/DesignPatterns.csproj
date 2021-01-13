@@ -84,6 +84,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adapter\AdapterInDependencyInjection.cs" />
+    <Compile Include="Adapter\Excercise.cs" />
     <Compile Include="Adapter\GenericValueAdapter.cs" />
     <Compile Include="Adapter\Vector-RasterDemo.cs" />
     <Compile Include="Adapter\AdapterCaching.cs" />
