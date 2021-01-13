@@ -83,6 +83,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adapter\Vector-RasterDemo.cs" />
     <Compile Include="Builder\Exercise.cs" />
     <Compile Include="Builder\FacetedBuilder.cs" />
     <Compile Include="Builder\FluentBuilderInheritanceWithRecursiveGenerics.cs" />
@@ -122,6 +123,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

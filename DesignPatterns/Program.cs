@@ -8,7 +8,10 @@ using System.Threading.Tasks;
 //using DesignPatterns.Builder;
 //using DesignPatterns.Factories;
 //using DesignPatterns.Prototype;
-using DesignPatterns.Singleton;
+//using DesignPatterns.Singleton;
+using DesignPatterns.Adapter;
+ 
+
 namespace DesignPatterns
 {
     class Program 
@@ -270,6 +273,10 @@ namespace DesignPatterns
             //}
             //Console.WriteLine(house);
             ////}
+            //Adapter - construct which adapts an existing interface X to conform to the required interface Y. 
+            //27 Vector/Raster Demo p1 {
+            
+            //}
             Console.ReadKey();
 
 
@@ -302,7 +309,9 @@ namespace DesignPatterns
         //    }
         //}
         ////}
-
+        //27 Vector/Raster Demo p2 {
+        //public static void DrawPoint(EntryPointNotFoundException )
+        //}
     }
 
 
