@@ -4,6 +4,8 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Autofac;
+using Autofac.Features.Metadata;
 using DesignPatterns.Adapter;
 using MoreLinq;
 //using MoreLinq.Extensions;
@@ -281,9 +283,40 @@ namespace DesignPatterns
             //Draw();
             //Draw();
             ////}
-            //28 {
+            ////28 Adapter Caching p1{
+            //Draw2();
+            //Draw2();
+            ////}
+            ////29 Generic Value Adapter{
+            //var v = new Vector2i();
+            //v[0] = 0;
+
+            //var vv = new Vector2i(3,2);
+
+            ////var result = v + vv;
+
+            //var u = Vector3f.Create(3.5f, 2.2f, 1);
+            ////}
+            ////30 Adapter in Dependency Injection {
+
+            //var b = new ContainerBuilder();
+            //b.RegisterType<SaveCommand>().As<ICommand>().WithMetadata("Name","Save");
+            //b.RegisterType<OpenCommand>().As<ICommand>().WithMetadata("Name", "Open");
+            ////b.RegisterType<Button>();
+            ////b.RegisterAdapter<ICommand, Button>(cmd=>new Button(cmd));
+            //b.RegisterAdapter<Meta<ICommand>, Button>(cmd=>new Button(cmd.Value,(string)cmd.Metadata["Name"]));
+            //b.RegisterType<Editor>();
+
+            //using (var c = b.Build())
+            //{
+            //    var editor = c.Resolve<Editor>();
+            //    foreach (var btn in editor.Buttons)
+            //    {
+            //        btn.PrintMe();
+            //    }
 
             //}
+            ////}
             Console.ReadKey();
 
 
@@ -318,30 +351,52 @@ namespace DesignPatterns
         //    }
         //}
         ////}
-        
-        //27 Vector/Raster Demo p2 {
-        public static void DrawPoint(Point p)
-        {
-            Console.Write(".");
-        }
-        private static readonly List<VectorObject> vectorObjects
-            = new List<VectorObject>
-            {
-                new VectorRectangle(1,1,10,10),
-                new VectorRectangle(3,3,6,6)
-            };
-        private static void Draw()
-        {
-            foreach (var vo in vectorObjects)
-            {
-                foreach (var line in vo)
-                {
-                    var adapter = new LineToPointAdapter(line);
-                    adapter.ForEach(DrawPoint);
-                }
-            }
-        }
+
+        ////27 Vector/Raster Demo p2 {
+        //public static void DrawPoint(Point p)
+        //{
+        //    Console.Write(".");
         //}
+        //private static readonly List<VectorObject> vectorObjects
+        //    = new List<VectorObject>
+        //    {
+        //        new VectorRectangle(1,1,10,10),
+        //        new VectorRectangle(3,3,6,6)
+        //    };
+        //private static void Draw()
+        //{
+        //    foreach (var vo in vectorObjects)
+        //    {
+        //        foreach (var line in vo)
+        //        {
+        //            var adapter = new LineToPointAdapter(line);
+        //            adapter.ForEach(DrawPoint);
+        //        }
+        //    }
+        //}
+        ////28 Adapter Caching p2{
+        //public static void DrawPoint2(Point2 p)
+        //{
+        //    Console.Write(".");
+        //}
+        //private static readonly List<VectorObject2> vectorObjects2
+        //    = new List<VectorObject2>
+        //    {
+        //        new VectorRectangle2(1,1,10,10),
+        //        new VectorRectangle2(3,3,6,6)
+        //    };
+        //private static void Draw2()
+        //{
+        //    foreach (var vo in vectorObjects2)
+        //    {
+        //        foreach (var line in vo)
+        //        {
+        //            var adapter = new LineToPointAdapter2(line);
+        //            adapter.ForEach(DrawPoint2);
+        //        }
+        //    }
+        //}
+        ////}
     }
 
 
