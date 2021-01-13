@@ -4,13 +4,16 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DesignPatterns.Adapter;
+using MoreLinq;
+//using MoreLinq.Extensions;
 //using DesignPatterns.TheSOLIDDesignPrinciples;
 //using DesignPatterns.Builder;
 //using DesignPatterns.Factories;
 //using DesignPatterns.Prototype;
 //using DesignPatterns.Singleton;
-using DesignPatterns.Adapter;
- 
+
+
 
 namespace DesignPatterns
 {
@@ -274,13 +277,19 @@ namespace DesignPatterns
             //Console.WriteLine(house);
             ////}
             //Adapter - construct which adapts an existing interface X to conform to the required interface Y. 
-            //27 Vector/Raster Demo p1 {
-            
+            ////27 Vector/Raster Demo p1 {
+            //Draw();
+            //Draw();
+            ////}
+            //28 {
+
             //}
             Console.ReadKey();
 
 
         }
+
+
 
         ////03 Liskov Substitution Principle p2 {
         //static public int Area(Rectangle r) => r.Width * r.Height;
@@ -309,8 +318,29 @@ namespace DesignPatterns
         //    }
         //}
         ////}
+        
         //27 Vector/Raster Demo p2 {
-        //public static void DrawPoint(EntryPointNotFoundException )
+        public static void DrawPoint(Point p)
+        {
+            Console.Write(".");
+        }
+        private static readonly List<VectorObject> vectorObjects
+            = new List<VectorObject>
+            {
+                new VectorRectangle(1,1,10,10),
+                new VectorRectangle(3,3,6,6)
+            };
+        private static void Draw()
+        {
+            foreach (var vo in vectorObjects)
+            {
+                foreach (var line in vo)
+                {
+                    var adapter = new LineToPointAdapter(line);
+                    adapter.ForEach(DrawPoint);
+                }
+            }
+        }
         //}
     }
 
