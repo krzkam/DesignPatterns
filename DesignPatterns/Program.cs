@@ -6,21 +6,23 @@ using System.Text;
 using System.Threading.Tasks;
 using Autofac;
 using Autofac.Features.Metadata;
-using DesignPatterns.Adapter;
 using MoreLinq;
+using DesignPatterns.Bridge;
 //using MoreLinq.Extensions;
 //using DesignPatterns.TheSOLIDDesignPrinciples;
 //using DesignPatterns.Builder;
 //using DesignPatterns.Factories;
 //using DesignPatterns.Prototype;
 //using DesignPatterns.Singleton;
-
+//using DesignPatterns.Adapter;
 
 
 namespace DesignPatterns
 {
     class Program 
     {
+        
+
         static void Main(string[] args)
         ////12 Asynchronous Factory Method p2 {
         //public static async Task Main(string[] args)
@@ -323,6 +325,34 @@ namespace DesignPatterns
             ////Console.WriteLine(sq.Side);
             //var adapter = new SquareToRectangleAdapter(sq);
             //Console.WriteLine(adapter.Area());
+
+            //Bridge - connecting different components through abstraction - mechanizm that decouples an interface (hierarchy) from an implementation (hierarchy)
+            //31 Bridge {
+            //IRenderer renderer = new RasterRenderer();
+            //var renderer = new VectorRenderer();
+            //var circle = new Circle(renderer, 5);
+
+            //circle.Draw();
+            //circle.Resize(2);
+            //circle.Draw();
+
+            var cb = new ContainerBuilder();
+            cb.RegisterType<VectorRenderer>().As<IRenderer>().SingleInstance();
+
+            cb.Register((c, p) => new Circle(c.Resolve<IRenderer>(), p.Positional<float>(0)));
+
+            using (var c = cb.Build())
+            {
+                var circle = c.Resolve<Circle>(
+                    new PositionalParameter(0, 5.0f)
+                    );
+                circle.Draw();
+                circle.Resize(2);
+                circle.Draw();
+            }
+
+
+            //}
 
             Console.ReadKey();
 
