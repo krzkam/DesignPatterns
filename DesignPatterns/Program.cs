@@ -15,6 +15,7 @@ using MoreLinq;
 //using DesignPatterns.Prototype;
 //using DesignPatterns.Singleton;
 //using DesignPatterns.Adapter;
+using DesignPatterns.Composite;
 
 
 namespace DesignPatterns
@@ -359,7 +360,28 @@ namespace DesignPatterns
             //Console.WriteLine(new Triangle(new VectorRenderer2()).ToString());
             //Console.WriteLine(new Square(new VectorRenderer2()).ToString());
 
-            //
+            //Composite - mechanism for treating individual (scalar) objects and compositions of objects in uniform manner
+            //Objects use other objects' fields/properties/members through inheritance and composition
+            //Composition lets us make compound objects
+            //  - E.g., a mathematical expression composed of simple expressions; 
+            //  - A grouping of shapes that consists of several shapes
+            //Composite design patter is used to treat both single (scalar) and composite object uniformly
+            ////32 Geometric Shapes {
+            //var drawing = new GraphicObject { Name = "My Drawing" };
+            //drawing.Children.Add(new Square { Color = "Red" });
+            //drawing.Children.Add(new Circle { Color = "Yellow" });
+
+            //var group = new GraphicObject();
+            //group.Children.Add(new Circle { Color = "Blue" });
+            //group.Children.Add(new Square { Color = "Blue" });
+
+            //drawing.Children.Add(group);
+
+            //Console.WriteLine(drawing);
+            // }
+            //33 Neural Networks {
+
+            // }
             Console.ReadKey();
 
 

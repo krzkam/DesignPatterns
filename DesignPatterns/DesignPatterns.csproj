@@ -95,6 +95,8 @@
     <Compile Include="Builder\FluentBuilderInheritanceWithRecursiveGenerics.cs" />
     <Compile Include="Builder\FunctionalBuilder.cs" />
     <Compile Include="Builder\LifeWithoutBuilderAndBuilder.cs" />
+    <Compile Include="Composite\GeometricShapes.cs" />
+    <Compile Include="Composite\NeuralNetworks.cs" />
     <Compile Include="Factories\AbstractFactoryAndOpenClosePrinciple.cs" />
     <Compile Include="Factories\AsynchronousFactoryMethod.cs" />
     <Compile Include="Factories\Excercise.cs" />
