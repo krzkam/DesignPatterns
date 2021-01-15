@@ -394,7 +394,19 @@ namespace DesignPatterns
             //34 Composite Specification {
 
             //}
-            Console.ReadKey();
+            ////Exercise
+            //SingleValue sing = new SingleValue();
+            //sing.Value = 1;
+
+            //SingleValue sing2 = new SingleValue();
+            //sing2.Value = 2;
+
+            //SingleValue sing3 = new SingleValue();
+            //List<IValueContainer> values = new List<IValueContainer>();
+            //values.Add(sing);
+            //values.Add(sing2);
+            //Console.WriteLine(values.Sum());
+            //Console.ReadKey();
 
 
         }
