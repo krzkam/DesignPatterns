@@ -89,6 +89,7 @@
     <Compile Include="Adapter\Vector-RasterDemo.cs" />
     <Compile Include="Adapter\AdapterCaching.cs" />
     <Compile Include="Bridge\Bridge.cs" />
+    <Compile Include="Bridge\Exercise.cs" />
     <Compile Include="Builder\Exercise.cs" />
     <Compile Include="Builder\FacetedBuilder.cs" />
     <Compile Include="Builder\FluentBuilderInheritanceWithRecursiveGenerics.cs" />

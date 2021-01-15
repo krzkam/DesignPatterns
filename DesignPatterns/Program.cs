@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Autofac;
 using Autofac.Features.Metadata;
 using MoreLinq;
-using DesignPatterns.Bridge;
+//using DesignPatterns.Bridge;
 //using MoreLinq.Extensions;
 //using DesignPatterns.TheSOLIDDesignPrinciples;
 //using DesignPatterns.Builder;
@@ -327,39 +327,43 @@ namespace DesignPatterns
             //Console.WriteLine(adapter.Area());
 
             //Bridge - connecting different components through abstraction - mechanizm that decouples an interface (hierarchy) from an implementation (hierarchy)
-            //31 Bridge {
-            //IRenderer renderer = new RasterRenderer();
-            //var renderer = new VectorRenderer();
-            //var circle = new Circle(renderer, 5);
+            ////31 Bridge {
+            ////IRenderer renderer = new RasterRenderer();
+            ////var renderer = new VectorRenderer();
+            ////var circle = new Circle(renderer, 5);
 
-            //circle.Draw();
-            //circle.Resize(2);
-            //circle.Draw();
+            ////circle.Draw();
+            ////circle.Resize(2);
+            ////circle.Draw();
 
-            var cb = new ContainerBuilder();
-            cb.RegisterType<VectorRenderer>().As<IRenderer>().SingleInstance();
+            //var cb = new ContainerBuilder();
+            //cb.RegisterType<VectorRenderer>().As<IRenderer>().SingleInstance();
 
-            cb.Register((c, p) => new Circle(c.Resolve<IRenderer>(), p.Positional<float>(0)));
+            //cb.Register((c, p) => new Circle(c.Resolve<IRenderer>(), p.Positional<float>(0)));
 
-            using (var c = cb.Build())
-            {
-                var circle = c.Resolve<Circle>(
-                    new PositionalParameter(0, 5.0f)
-                    );
-                circle.Draw();
-                circle.Resize(2);
-                circle.Draw();
-            }
-
-
+            //using (var c = cb.Build())
+            //{
+            //    var circle = c.Resolve<Circle>(
+            //        new PositionalParameter(0, 5.0f)
+            //        );
+            //    circle.Draw();
+            //    circle.Resize(2);
+            //    circle.Draw();
             //}
+            ////}
 
+            //Exercise
+            //Console.WriteLine(new Triangle(new RasterRenderer2()).ToString());
+            //Console.WriteLine(new Square(new RasterRenderer2()).ToString());
+
+            //Console.WriteLine(new Triangle(new VectorRenderer2()).ToString());
+            //Console.WriteLine(new Square(new VectorRenderer2()).ToString());
+
+            //
             Console.ReadKey();
 
 
         }
-
-
 
         ////03 Liskov Substitution Principle p2 {
         //static public int Area(Rectangle r) => r.Width * r.Height;
