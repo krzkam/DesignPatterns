@@ -422,7 +422,21 @@ namespace DesignPatterns
             //d.Fly();
             //d.Crawl();
             //// }
-            //38 Multiple Inheritance with Default Interface Members {
+            ////38 Multiple Inheritance with Default Interface Members {
+            //Dragon2 d = new Dragon2 { Age = 5 };
+            ////}
+            ////39 Dynamic Decorator Composition{
+            //var square = new Square(1.23f);
+            //Console.WriteLine(square.AsString());
+
+            //var redSquare = new ColoredSquare(square, "red");
+            //Console.WriteLine(redSquare.AsString());
+
+            //var redHalfTransparentSquare = new TransparentShape(redSquare, 0.5f);
+            //Console.WriteLine(redHalfTransparentSquare.AsString());
+            ////}
+
+            //40 {
 
             //}
 
