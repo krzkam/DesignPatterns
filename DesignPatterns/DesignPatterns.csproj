@@ -98,6 +98,8 @@
     <Compile Include="Composite\Exercise.cs" />
     <Compile Include="Composite\GeometricShapes.cs" />
     <Compile Include="Composite\NeuralNetworks.cs" />
+    <Compile Include="Decorator\Adapter-Decorator.cs" />
+    <Compile Include="Decorator\CustomStringBuilder.cs" />
     <Compile Include="Factories\AbstractFactoryAndOpenClosePrinciple.cs" />
     <Compile Include="Factories\AsynchronousFactoryMethod.cs" />
     <Compile Include="Factories\Excercise.cs" />

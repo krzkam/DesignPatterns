@@ -15,8 +15,8 @@ using MoreLinq;
 //using DesignPatterns.Prototype;
 //using DesignPatterns.Singleton;
 //using DesignPatterns.Adapter;
-using DesignPatterns.Composite;
-
+//using DesignPatterns.Composite;
+using DesignPatterns.Decorator;
 
 namespace DesignPatterns
 {
@@ -406,7 +406,17 @@ namespace DesignPatterns
             //values.Add(sing);
             //values.Add(sing2);
             //Console.WriteLine(values.Sum());
-            //Console.ReadKey();
+
+            //Decorator - add behavior to the clas without editing the classes itself
+            //35 Custom String Builder{
+
+            //}
+            //36 Adapter-Decorator{
+            MyStringBuilder s = "hello ";
+            s += "world";
+            Console.WriteLine(s);
+            //}
+            Console.ReadKey();
 
 
         }
