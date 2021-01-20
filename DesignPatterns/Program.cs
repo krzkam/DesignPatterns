@@ -410,12 +410,22 @@ namespace DesignPatterns
             //Decorator - add behavior to the clas without editing the classes itself
             //35 Custom String Builder{
 
+            ////}
+            ////36 Adapter-Decorator{
+            //MyStringBuilder s = "hello ";
+            //s += "world";
+            //Console.WriteLine(s);
+            ////}
+            //// 37 Multiple Inheritance with Interfaces {
+            //var d = new Dragon();
+            //d.Weight = 100;
+            //d.Fly();
+            //d.Crawl();
+            //// }
+            //38 Multiple Inheritance with Default Interface Members {
+
             //}
-            //36 Adapter-Decorator{
-            MyStringBuilder s = "hello ";
-            s += "world";
-            Console.WriteLine(s);
-            //}
+
             Console.ReadKey();
 
 
