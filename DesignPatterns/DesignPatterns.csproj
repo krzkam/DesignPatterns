@@ -102,6 +102,7 @@
     <Compile Include="Decorator\CustomStringBuilder.cs" />
     <Compile Include="Decorator\DecoratonInDependencyInjection.cs" />
     <Compile Include="Decorator\DynamicDecoratorComposition.cs" />
+    <Compile Include="Decorator\Exercise.cs" />
     <Compile Include="Decorator\MultipleInheritanceInterfaces.cs" />
     <Compile Include="Decorator\MultipleInheritanceWithDefaultInterfaceMembers.cs" />
     <Compile Include="Decorator\StaticDecoratorComposition.cs" />

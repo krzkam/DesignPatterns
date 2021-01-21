@@ -16,7 +16,7 @@ using MoreLinq;
 //using DesignPatterns.Singleton;
 //using DesignPatterns.Adapter;
 //using DesignPatterns.Composite;
-using DesignPatterns.Decorator;
+//using DesignPatterns.Decorator;
 
 namespace DesignPatterns
 {
@@ -452,6 +452,13 @@ namespace DesignPatterns
             //    r.Report();
             //}
             ////}
+            ////Exercise {
+            //    var d = new Dragon2();
+            //    d.Age = 100;
+            //    d.Fly();
+            //    d.Crawl();
+            ////}
+
             Console.ReadKey();
 
 
