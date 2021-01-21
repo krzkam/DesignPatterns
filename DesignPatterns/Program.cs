@@ -436,10 +436,22 @@ namespace DesignPatterns
             //Console.WriteLine(redHalfTransparentSquare.AsString());
             ////}
 
-            //40 {
+            ////40 Static Decorator Composition {
+            //var circle = new TransparentShape<ColoredShape<Circle2>>(0.4f);
+            //Console.WriteLine(circle.AsString());
+            ////}
+            ////41 Decorator in Dependency Injection {
+            //var b = new ContainerBuilder();
+            //b.RegisterType<ReportingService>().Named<IReportService>("reporting");
+            //b.RegisterDecorator<IReportService>(                
+            //    (context, service) => new ReportingServiceWithLogging(service), "reporting");
 
+            //using (var c = b.Build())
+            //{
+            //    var r = c.Resolve<IReportService>();
+            //    r.Report();
             //}
-
+            ////}
             Console.ReadKey();
 
 

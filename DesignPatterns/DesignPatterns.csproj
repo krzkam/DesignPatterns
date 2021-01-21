@@ -100,9 +100,11 @@
     <Compile Include="Composite\NeuralNetworks.cs" />
     <Compile Include="Decorator\Adapter-Decorator.cs" />
     <Compile Include="Decorator\CustomStringBuilder.cs" />
+    <Compile Include="Decorator\DecoratonInDependencyInjection.cs" />
     <Compile Include="Decorator\DynamicDecoratorComposition.cs" />
     <Compile Include="Decorator\MultipleInheritanceInterfaces.cs" />
     <Compile Include="Decorator\MultipleInheritanceWithDefaultInterfaceMembers.cs" />
+    <Compile Include="Decorator\StaticDecoratorComposition.cs" />
     <Compile Include="Factories\AbstractFactoryAndOpenClosePrinciple.cs" />
     <Compile Include="Factories\AsynchronousFactoryMethod.cs" />
     <Compile Include="Factories\Excercise.cs" />
