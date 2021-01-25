@@ -480,6 +480,10 @@ namespace DesignPatterns
             //bft.GetRange(10, 15).Capitalize = true; ;
             //Console.WriteLine(bft);
             ////}
+            //Exercise
+            //var sentence = new Sentence("hello world");
+            //sentence[1].Capitalize = true;
+            //Console.WriteLine(sentence);
             Console.ReadKey();
 
 

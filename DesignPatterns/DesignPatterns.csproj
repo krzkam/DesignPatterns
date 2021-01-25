@@ -115,6 +115,7 @@
     <Compile Include="Factories\Factory.cs" />
     <Compile Include="Factories\InnerFactory.cs" />
     <Compile Include="Factories\PointExample.cs" />
+    <Compile Include="Flyweight\Exercise.cs" />
     <Compile Include="Flyweight\RepeatingUserNames.cs" />
     <Compile Include="Flyweight\TextFormatting.cs" />
     <Compile Include="Program.cs" />
