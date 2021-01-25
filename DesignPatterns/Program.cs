@@ -458,7 +458,16 @@ namespace DesignPatterns
             //    d.Fly();
             //    d.Crawl();
             ////}
+            //Flyweight - space optimization that lets us use less memory by storing externally the data associated with similar objects
+            // - avoid redundancy when storing data
+            //      *Plenty of users with identical first/last names
+            //      *No sens in storing same first/last name over and over again
+            //      *Store a list of names and pointer to them
+            // - .NET performs string intering, so an identical string is stored only once
 
+            //42 {
+
+            //}
             Console.ReadKey();
 
 
