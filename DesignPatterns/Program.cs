@@ -469,17 +469,17 @@ namespace DesignPatterns
             //      *Store a list of names and pointer to them
             // - .NET performs string intering, so an identical string is stored only once
 
-            //42 Repeating User Names p1{
+            ////42 Repeating User Names p1{
 
-            //}
-            //43 Text Formatting{
-            var ft = new FormattedText("This is a brave new world");
-            ft.Capitalize(10, 15);
-            Console.WriteLine(ft);
-            var bft = new BetterFormatterText("This is a brave new world");
-            bft.GetRange(10, 15).Capitalize = true; ;
-            Console.WriteLine(bft);
-            //}
+            ////}
+            ////43 Text Formatting{
+            //var ft = new FormattedText("This is a brave new world");
+            //ft.Capitalize(10, 15);
+            //Console.WriteLine(ft);
+            //var bft = new BetterFormatterText("This is a brave new world");
+            //bft.GetRange(10, 15).Capitalize = true; ;
+            //Console.WriteLine(bft);
+            ////}
             Console.ReadKey();
 
 
