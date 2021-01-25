@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using Autofac;
 using Autofac.Features.Metadata;
 using MoreLinq;
+using NUnit.Framework;
+using JetBrains.dotMemoryUnit;
 //using DesignPatterns.Bridge;
 //using MoreLinq.Extensions;
 //using DesignPatterns.TheSOLIDDesignPrinciples;
@@ -17,13 +19,15 @@ using MoreLinq;
 //using DesignPatterns.Adapter;
 //using DesignPatterns.Composite;
 //using DesignPatterns.Decorator;
+using DesignPatterns.Flyweight;
 
 namespace DesignPatterns
 {
+    [TestFixture]
     class Program 
     {
-        
 
+        
         static void Main(string[] args)
         ////12 Asynchronous Factory Method p2 {
         //public static async Task Main(string[] args)
@@ -465,8 +469,16 @@ namespace DesignPatterns
             //      *Store a list of names and pointer to them
             // - .NET performs string intering, so an identical string is stored only once
 
-            //42 {
+            //42 Repeating User Names p1{
 
+            //}
+            //43 Text Formatting{
+            var ft = new FormattedText("This is a brave new world");
+            ft.Capitalize(10, 15);
+            Console.WriteLine(ft);
+            var bft = new BetterFormatterText("This is a brave new world");
+            bft.GetRange(10, 15).Capitalize = true; ;
+            Console.WriteLine(bft);
             //}
             Console.ReadKey();
 
@@ -546,6 +558,42 @@ namespace DesignPatterns
         //    }
         //}
         ////}
+        ////42 Repeating User Names p2{
+        //[Test]
+        //public void TestUser()
+        //{
+        //    var firstNames = Enumerable.Range(0, 100).Select(_ => RandomString());
+        //    var lastNames = Enumerable.Range(0, 100).Select(_ => RandomString());
+
+        //    var users = new List<User>();
+
+        //    foreach (var firstName in firstNames)
+        //    {
+        //        foreach (var lastName in lastNames)
+        //        {
+        //            users.Add(new User($"{firstName} {lastName}"));
+        //        }
+        //    }
+        //    ForceGC();
+
+        //    dotMemory.Check(memory =>
+        //    {
+        //        Console.WriteLine(memory.SizeInBytes);
+        //    });
+        //}
+
+        //private void ForceGC()
+        //{
+        //    GC.Collect();
+        //    GC.WaitForPendingFinalizers();
+        //    GC.Collect();
+        //}
+        //private string RandomString()
+        //{
+        //    Random rand = new Random();
+        //    return new string(Enumerable.Range(0, 10).Select(i => (char)('a' + rand.Next(26))).ToArray());
+        //}
+        //// }
     }
 
 

@@ -38,6 +38,9 @@
     <Reference Include="Autofac, Version=6.1.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\packages\Autofac.6.1.0\lib\netstandard2.0\Autofac.dll</HintPath>
     </Reference>
+    <Reference Include="dotMemory.Unit, Version=111.0.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\packages\JetBrains.dotMemoryUnit.3.1.20200127.214830\lib\net35\dotMemory.Unit.dll</HintPath>
+    </Reference>
     <Reference Include="JetBrains.Annotations, Version=2020.3.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
       <HintPath>..\packages\JetBrains.Annotations.2020.3.0\lib\net20\JetBrains.Annotations.dll</HintPath>
     </Reference>
@@ -112,6 +115,8 @@
     <Compile Include="Factories\Factory.cs" />
     <Compile Include="Factories\InnerFactory.cs" />
     <Compile Include="Factories\PointExample.cs" />
+    <Compile Include="Flyweight\RepeatingUserNames.cs" />
+    <Compile Include="Flyweight\TextFormatting.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Prototype\CopyContstructors.cs" />
