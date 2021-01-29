@@ -19,11 +19,11 @@ using JetBrains.dotMemoryUnit;
 //using DesignPatterns.Adapter;
 //using DesignPatterns.Composite;
 //using DesignPatterns.Decorator;
-using DesignPatterns.Flyweight;
-
+//using DesignPatterns.Flyweight;
+using DesignPatterns.Proxy;
 namespace DesignPatterns
 {
-    [TestFixture]
+    //[TestFixture]
     class Program 
     {
 
@@ -484,6 +484,15 @@ namespace DesignPatterns
             //var sentence = new Sentence("hello world");
             //sentence[1].Capitalize = true;
             //Console.WriteLine(sentence);
+
+            //Proxy - interface for accessing particular resource by replicating this interface. That resource may be remote, expensive to construct, or may require logging or some other added functionality.
+            ////44 Protection Proxy {
+            //ICar car = new CarProxy(new Driver(12));
+            //car.Drive();
+            ////}
+            //45 Property Proxy {
+
+            //}
             Console.ReadKey();
 
 
