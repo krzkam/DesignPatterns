@@ -489,8 +489,43 @@ namespace DesignPatterns
             ////44 Protection Proxy {
             //ICar car = new CarProxy(new Driver(12));
             //car.Drive();
+            //////}
+            ////45 Property Proxy {
+            //var c = new Creature();
+            //c.Agility = 10;
             ////}
-            //45 Property Proxy {
+            //// 46 Value Proxy p1{
+            //Console.WriteLine(10f*5.Percent());
+            //Console.WriteLine(2.Percent()+3.Percent());
+            ////
+            //// 47 Composite Proxy: SoA/AoS {
+            ////AoS
+            //var creatures = new Creature2[100];
+
+            //foreach (var c in creatures)
+            //{
+            //    c.X++;
+            //}
+
+            ////AoS/SoA duality
+            //var creatures2 = new Creatures(100); //SoA
+            //foreach (Creatures.CreatureProxy c in creatures2)
+            //{
+            //    c.X++;
+            //}
+            ////
+            //48 Composite Proxy with Array - Backed Properties {
+
+            //}
+            ////49 Dynamic Proxy for Logging {
+            ////var ba = new BankAccount();
+            //var ba = Log<BankAccount>.As<IBankAccount>();
+
+            //ba.Deposit(100);
+            //ba.Withdraw(50);
+            //Console.WriteLine(ba); 
+            ////}
+            //50 ViewModel {
 
             //}
             Console.ReadKey();
@@ -607,6 +642,7 @@ namespace DesignPatterns
         //    return new string(Enumerable.Range(0, 10).Select(i => (char)('a' + rand.Next(26))).ToArray());
         //}
         //// }
+ 
     }
 
 
