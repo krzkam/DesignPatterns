@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices; 
-
+//viewmodel - representation of the data that you want to show with the additional functionality (for example validation)
 namespace DesignPatterns.Proxy
 {
     //mvvm

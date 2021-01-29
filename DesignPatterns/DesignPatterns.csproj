@@ -134,6 +134,7 @@
     <Compile Include="Proxy\CompositeProxySoA-AoS.cs" />
     <Compile Include="Proxy\CompositeProxyWithArray-BackedProperties.cs" />
     <Compile Include="Proxy\DynamicProxyForLogging.cs" />
+    <Compile Include="Proxy\Exercise.cs" />
     <Compile Include="Proxy\PropertyProxy.cs" />
     <Compile Include="Proxy\ProtectionProxy.cs" />
     <Compile Include="Proxy\ValueProxy.cs" />
