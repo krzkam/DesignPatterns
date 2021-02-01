@@ -20,7 +20,8 @@ using JetBrains.dotMemoryUnit;
 //using DesignPatterns.Composite;
 //using DesignPatterns.Decorator;
 //using DesignPatterns.Flyweight;
-using DesignPatterns.Proxy;
+//using DesignPatterns.Proxy;
+using DesignPatterns.ChainOfResponsibility;
 namespace DesignPatterns
 {
     //[TestFixture]
@@ -526,6 +527,50 @@ namespace DesignPatterns
             //Console.WriteLine(ba); 
             ////}
             //50 ViewModel {
+
+            //}
+
+            //Chain of Responsibility - chain of components who all get a change to processs a command or a query, 
+            //optionally having default processing implementation and an ability to terminate the processing chain
+            //51 Command Query Separation - having separate measn of sending commands and queries to e.g., direct fields access
+            ////52 Method Chain {
+            //var goblin = new Creature("Goblin",2,2);
+            //Console.WriteLine(goblin);
+
+            //var root = new CreatureModifier(goblin);
+
+            //root.Add(new NoBonusesModifier(goblin));
+
+            //Console.WriteLine("Let's double the goblin's attack");
+            //root.Add(new DoubleAttackModifier(goblin));
+
+
+            //Console.WriteLine("Let's increase the goblin's defense");
+            //root.Add(new IncreasedDefenseModifier(goblin));
+
+
+            //root.Handle();
+            //Console.WriteLine(goblin);
+
+            ////}
+
+            //53 Broker Chain {
+            var goblin = new Creature2("Goblin", 2, 2);
+            Console.WriteLine(goblin);
+
+            var root = new CreatureModifier2(goblin);
+
+            root.Add(new NoBonusesModifier2(goblin));
+
+            Console.WriteLine("Let's double the goblin's attack");
+            root.Add(new DoubleAttackModifier2(goblin));
+
+
+            Console.WriteLine("Let's increase the goblin's defense");
+            root.Add(new IncreasedDefenseModifier2(goblin));
+
+            root.Handle();
+            Console.WriteLine(goblin);
 
             //}
             Console.ReadKey();

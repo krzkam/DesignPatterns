@@ -104,6 +104,8 @@
     <Compile Include="Builder\FluentBuilderInheritanceWithRecursiveGenerics.cs" />
     <Compile Include="Builder\FunctionalBuilder.cs" />
     <Compile Include="Builder\LifeWithoutBuilderAndBuilder.cs" />
+    <Compile Include="ChainOfResponsibility\BrokerChain.cs" />
+    <Compile Include="ChainOfResponsibility\MethodChain.cs" />
     <Compile Include="Composite\Exercise.cs" />
     <Compile Include="Composite\GeometricShapes.cs" />
     <Compile Include="Composite\NeuralNetworks.cs" />
