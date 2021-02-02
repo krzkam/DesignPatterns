@@ -555,8 +555,19 @@ namespace DesignPatterns
             ////}
 
             //53 Broker Chain {
+            var game = new Game();
+            var goblin = new Creature2(game, "Strong Goblin",3,3);
+            Console.WriteLine(goblin);
 
-
+            using(new DoubleAttackModifier2(game, goblin))
+            {
+                Console.WriteLine(goblin);
+                using (new IncreaseDefenseModifier(game, goblin))
+                {
+                    Console.WriteLine(goblin);
+                }
+            }
+            Console.WriteLine(goblin);
             //}
             Console.ReadKey();
 
