@@ -21,7 +21,9 @@ using JetBrains.dotMemoryUnit;
 //using DesignPatterns.Decorator;
 //using DesignPatterns.Flyweight;
 //using DesignPatterns.Proxy;
-using DesignPatterns.ChainOfResponsibility;
+//using DesignPatterns.ChainOfResponsibility;
+using DesignPatterns.Command;
+
 namespace DesignPatterns
 {
     //[TestFixture]
@@ -554,20 +556,25 @@ namespace DesignPatterns
 
             ////}
 
-            //53 Broker Chain {
-            var game = new Game();
-            var goblin = new Creature2(game, "Strong Goblin",3,3);
-            Console.WriteLine(goblin);
+            ////53 Broker Chain {
+            //var game = new Game();
+            //var goblin = new Creature2(game, "Strong Goblin",3,3);
+            //Console.WriteLine(goblin);
 
-            using(new DoubleAttackModifier2(game, goblin))
-            {
-                Console.WriteLine(goblin);
-                using (new IncreaseDefenseModifier(game, goblin))
-                {
-                    Console.WriteLine(goblin);
-                }
-            }
-            Console.WriteLine(goblin);
+            //using(new DoubleAttackModifier2(game, goblin))
+            //{
+            //    Console.WriteLine(goblin);
+            //    using (new IncreaseDefenseModifier(game, goblin))
+            //    {
+            //        Console.WriteLine(goblin);
+            //    }
+            //}
+            //Console.WriteLine(goblin);
+            //}
+
+            //Command - An object which represents an instruction to perform a particular action. Contains all the information necessary for the action to be taken.
+            //54 Command {
+
             //}
             Console.ReadKey();
 
