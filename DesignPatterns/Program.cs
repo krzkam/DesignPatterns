@@ -30,7 +30,7 @@ namespace DesignPatterns
     class Program 
     {
 
-        
+
         static void Main(string[] args)
         ////12 Asynchronous Factory Method p2 {
         //public static async Task Main(string[] args)
@@ -573,8 +573,43 @@ namespace DesignPatterns
             //}
 
             //Command - An object which represents an instruction to perform a particular action. Contains all the information necessary for the action to be taken.
-            //54 Command {
+            ////54 Command {
+            //var ba = new BankAccount();
+            //var commands = new List<BankAccountCommand>
+            //{
+            //    new BankAccountCommand(ba,BankAccountCommand.Action.Deposit,100),
+            //    new BankAccountCommand(ba,BankAccountCommand.Action.Withdraw,50)
+            //};
+            //Console.WriteLine(ba);
 
+            //foreach (var c in commands)
+            //{
+            //    c.Call();
+            //}
+            //Console.WriteLine(ba);
+
+            ////}
+
+            //55 Undo Operations {
+            var ba = new BankAccount2();
+            var commands = new List<BankAccountCommand2>
+            {
+                new BankAccountCommand2(ba,BankAccountCommand2.Action.Deposit,100),
+                new BankAccountCommand2(ba,BankAccountCommand2.Action.Withdraw,50)
+            };
+            Console.WriteLine(ba);
+
+            foreach (var c in commands)
+            {
+                c.Call();
+            }
+            Console.WriteLine(ba);
+
+            foreach (var c in Enumerable.Reverse(commands))
+            {
+                c.Undo();
+            }
+            Console.WriteLine(ba);
             //}
             Console.ReadKey();
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns.Command
 {
-    public class BankAccount
+    public class BankAccount2
     {
         private int balance;
         private int overdraftLimit = -500;
@@ -17,13 +17,15 @@ namespace DesignPatterns.Command
             Console.WriteLine($"Deposited ${amount}, balance is now {balance}");
         }
 
-        public void Withdraw(int amount)
+        public bool Withdraw(int amount)
         {
             if (balance - amount >= overdraftLimit)
             {
                 balance -= amount;
                 Console.WriteLine($"Withdrew ${amount}, balance is now {balance}");
+                return true;
             }
+            return false;
         }
 
         public override string ToString()
@@ -32,14 +34,15 @@ namespace DesignPatterns.Command
         }
     }
 
-    public interface ICommand
+    public interface ICommand2
     {
         void Call();
+        void Undo();
     }
 
-    public class BankAccountCommand : ICommand
+    public class BankAccountCommand2 : ICommand2
     {
-        private BankAccount account;
+        private BankAccount2 account;
 
         public enum Action
         {
@@ -48,8 +51,9 @@ namespace DesignPatterns.Command
 
         private Action action;
         private int amount;
+        private bool succeeded;
 
-        public BankAccountCommand(BankAccount account, Action action, int amount)
+        public BankAccountCommand2(BankAccount2 account, Action action, int amount)
         {
             this.account = account ?? throw new ArgumentNullException(nameof(account));
             this.action = action;
@@ -59,12 +63,29 @@ namespace DesignPatterns.Command
         public void Call()
         {
             switch (action)
-            {
+            {                
                 case Action.Deposit:
                     account.Deposit(amount);
+                    succeeded = true;
                     break;
                 case Action.Withdraw:
-                    account.Withdraw(amount);
+                    succeeded = account.Withdraw(amount);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        public void Undo()
+        {
+            if (!succeeded) return;
+            switch (action)
+            {
+                case Action.Deposit:
+                    account.Withdraw(amount);                    
+                    break;
+                case Action.Withdraw:
+                    account.Deposit(amount);
                     break;
                 default:
                     break;

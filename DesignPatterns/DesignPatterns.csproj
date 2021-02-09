@@ -107,6 +107,8 @@
     <Compile Include="ChainOfResponsibility\BrokerChain.cs" />
     <Compile Include="ChainOfResponsibility\MethodChain.cs" />
     <Compile Include="Command\Command.cs" />
+    <Compile Include="Command\CompositeCommand.cs" />
+    <Compile Include="Command\UndoOperations.cs" />
     <Compile Include="Composite\Exercise.cs" />
     <Compile Include="Composite\GeometricShapes.cs" />
     <Compile Include="Composite\NeuralNetworks.cs" />
