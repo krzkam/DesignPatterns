@@ -22,7 +22,8 @@ using JetBrains.dotMemoryUnit;
 //using DesignPatterns.Flyweight;
 //using DesignPatterns.Proxy;
 //using DesignPatterns.ChainOfResponsibility;
-using DesignPatterns.Command;
+//using DesignPatterns.Command;
+using DesignPatterns.Interpreter;
 
 namespace DesignPatterns
 {
@@ -590,26 +591,39 @@ namespace DesignPatterns
 
             ////}
 
-            //55 Undo Operations {
-            var ba = new BankAccount2();
-            var commands = new List<BankAccountCommand2>
-            {
-                new BankAccountCommand2(ba,BankAccountCommand2.Action.Deposit,100),
-                new BankAccountCommand2(ba,BankAccountCommand2.Action.Withdraw,50)
-            };
-            Console.WriteLine(ba);
+            ////55 Undo Operations {
+            //var ba = new BankAccount2();
+            //var commands = new List<BankAccountCommand2>
+            //{
+            //    new BankAccountCommand2(ba,BankAccountCommand2.Action.Deposit,100),
+            //    new BankAccountCommand2(ba,BankAccountCommand2.Action.Withdraw,50)
+            //};
+            //Console.WriteLine(ba);
 
-            foreach (var c in commands)
-            {
-                c.Call();
-            }
-            Console.WriteLine(ba);
+            //foreach (var c in commands)
+            //{
+            //    c.Call();
+            //}
+            //Console.WriteLine(ba);
 
-            foreach (var c in Enumerable.Reverse(commands))
-            {
-                c.Undo();
-            }
-            Console.WriteLine(ba);
+            //foreach (var c in Enumerable.Reverse(commands))
+            //{
+            //    c.Undo();
+            //}
+            //Console.WriteLine(ba);
+            ////}
+            ///
+            //Interpreter - A component that processes structured text data. 
+            //Does so by turning it into separate lexical tokens (lexing) and then interpreting sequences of said tokens (parsing)
+            //56, 57 Handmade Interpreter: Lexing - Parsing p1 {
+            //
+
+            var input = "(13+4)-(12+1)";
+            var tokens = Lex(input);
+            Console.WriteLine(string.Join("\t", tokens));
+
+            var parsed = Parse(tokens);
+            Console.WriteLine($"{input} = {parsed.Value}");
             //}
             Console.ReadKey();
 
@@ -725,7 +739,98 @@ namespace DesignPatterns
         //    return new string(Enumerable.Range(0, 10).Select(i => (char)('a' + rand.Next(26))).ToArray());
         //}
         //// }
+        //56, 57 Handmade Interpreter: Lexing - Parsing p2 {
+        static List<Token> Lex(string input)
+        {
+            var result = new List<Token>();
+            for (int i = 0; i < input.Length; i++)
+            {
+                switch (input[i])
+                {
+                    case '+':
+                        result.Add(new Token(Token.Type.Plus, "+"));
+                        break;
+                    case '-':
+                        result.Add(new Token(Token.Type.Plus, "-"));
+                        break;
+                    case '(':
+                        result.Add(new Token(Token.Type.Plus, "("));
+                        break;
+                    case ')':
+                        result.Add(new Token(Token.Type.Plus, ")"));
+                        break;
+                    default:
+                        var sb = new StringBuilder(input[i].ToString());
+                        for (int j = i + 1; j < input.Length; ++j)
+                        {
+                            if (char.IsDigit(input[j]))
+                            {
+                                sb.Append(input[j]);
+                                ++i;
+                            }
+                            else
+                            {
+                                result.Add(new Token(Token.Type.Integer, sb.ToString()));
+                            }
+                        }
+                        break;
+                }
+            }
+            return result;
+        }
+
+        static IElement Parse(IReadOnlyList<Token> tokens)
+        {
+            var result = new BinaryOperation();
+            bool haveLHS = false;
+            for (int i = 0; i < tokens.Count; i++)
+            {
+                var token = tokens[i];
+                switch (token.MyType)
+                {
+                    case Token.Type.Integer:
+                        var integer = new Integer(int.Parse(token.Text));
+                        if (!haveLHS)
+                        {
+                            result.Left = integer;
+                            haveLHS = true; 
+                        }
+                        else
+                        {
+                            result.Right = integer;
+                        }
+                        break;
+                    case Token.Type.Plus:
+                        result.MyType = BinaryOperation.Type.Addition;
+                        break;
+                    case Token.Type.Minus:
+                        result.MyType = BinaryOperation.Type.Subtraction;
+                        break;
+                    case Token.Type.Lparen:
+                        int j = i;
+                        for (; j < tokens.Count; ++i)
+                            if (tokens[j].MyType == Token.Type.Rparen)
+                                break;
+                        var subexpression = tokens.Skip(i + 1).Take(j - i - 1).ToList();
+                        var element = Parse(subexpression);
+                        if (!haveLHS)
+                        {
+                            result.Left = element;
+                            haveLHS = true;
+                        }
+                        else
+                        {
+                            result.Right = element;
+                        }
+                        break;             
+                    default:
+                        throw new ArgumentOutOfRangeException();
  
+                }
+            }
+            return result;
+        }
+        //}
     }
 
 
