@@ -627,11 +627,12 @@ namespace DesignPatterns
             //    Console.WriteLine($"{input} = {parsed.Value}");
             //    //}
             // Iterator = an object (or, in .NET, a method) that facilitates the passing of a data structure
-            ////58 Iterator Object
-            ////   1
-            ////  / \
-            //// 2   3
-            ////in-order 213
+            //58 Iterator Object
+            //59 Iterator Method
+            //   1
+            //  / \
+            // 2   3
+            //in-order 213
 
             //var root = new Node<int>(1,
             //    new Node<int>(2), new Node<int>(3));
@@ -644,7 +645,19 @@ namespace DesignPatterns
             //}
             //Console.WriteLine();
 
-            //59 Iterator Method
+            //var tree = new BinaryTree<int>(root);
+            //Console.WriteLine(string.Join(",",
+            //    tree.InOrder.Select(x=>x.Value)));
+
+            //60 Interators and Duck Typing
+            //var root = new Node<int>(1,
+            //    new Node<int>(2), new Node<int>(3));
+
+            //var tree = new BinaryTree<int>(root);
+            //foreach (var node in tree)
+            //    Console.WriteLine(node.Value);
+
+            //61 Array-Backed Properties
             Console.ReadKey();
 
 
