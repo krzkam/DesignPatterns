@@ -23,7 +23,8 @@ using JetBrains.dotMemoryUnit;
 //using DesignPatterns.Proxy;
 //using DesignPatterns.ChainOfResponsibility;
 //using DesignPatterns.Command;
-using DesignPatterns.Interpreter;
+//using DesignPatterns.Interpreter;
+using DesignPatterns.Iterator;
 
 namespace DesignPatterns
 {
@@ -613,224 +614,245 @@ namespace DesignPatterns
             //Console.WriteLine(ba);
             ////}
             ///
-            //Interpreter - A component that processes structured text data. 
-            //Does so by turning it into separate lexical tokens (lexing) and then interpreting sequences of said tokens (parsing)
-            //56, 57 Handmade Interpreter: Lexing - Parsing p1 {
-            //
+            //    //Interpreter - A component that processes structured text data. 
+            //    //Does so by turning it into separate lexical tokens (lexing) and then interpreting sequences of said tokens (parsing)
+            //    //56, 57 Handmade Interpreter: Lexing - Parsing p1 {
+            //    //
 
-            var input = "(13+4)-(12+1)";
-            var tokens = Lex(input);
-            Console.WriteLine(string.Join("\t", tokens));
+            //    var input = "(13+4)-(12+1)";
+            //    var tokens = Lex(input);
+            //    Console.WriteLine(string.Join("\t", tokens));
 
-            var parsed = Parse(tokens);
-            Console.WriteLine($"{input} = {parsed.Value}");
+            //    var parsed = Parse(tokens);
+            //    Console.WriteLine($"{input} = {parsed.Value}");
+            //    //}
+            // Iterator = an object (or, in .NET, a method) that facilitates the passing of a data structure
+            ////58 Iterator Object
+            ////   1
+            ////  / \
+            //// 2   3
+            ////in-order 213
+
+            //var root = new Node<int>(1,
+            //    new Node<int>(2), new Node<int>(3));
+
+            //var it = new InOrderIterator<int>(root);
+            //while (it.MoveNext())
+            //{
+            //    Console.Write(it.Current.Value);
+            //    Console.Write(',');
             //}
+            //Console.WriteLine();
+
+            //59 Iterator Method
             Console.ReadKey();
 
 
         }
 
-        ////03 Liskov Substitution Principle p2 {
-        //static public int Area(Rectangle r) => r.Width * r.Height;
+        //////03 Liskov Substitution Principle p2 {
+        ////static public int Area(Rectangle r) => r.Width * r.Height;
+        //////}
+
+        //////05 Dependency Inversion Principle p2{
+        ////high-level module
+        ////public Program(Relationshps relationshps)
+        ////{
+        ////    var relations = relationshps.relationsPublic;
+        ////    foreach (var r in relations.Where(
+        ////        x => x.Item1.Name == "John" &&
+        ////        x.Item2 == Relationship.Parent
+        ////        ))
+        ////    {
+        ////        Console.WriteLine($"Johnk has a child called {r.Item3.Name}");
+        ////    }
         ////}
 
-        ////05 Dependency Inversion Principle p2{
-        //high-level module
-        //public Program(Relationshps relationshps)
+        //////better way: we can build another constructor, but this time we don't depend on Relationships instead we depend on interface
+        ////public Program(IRelationshipBrowser browser)
+        ////{
+        ////    foreach (var p in browser.FindAllChildrenOf("John"))
+        ////    {
+        ////        Console.WriteLine($"Johnk has a child called {p.Name}");
+        ////    }
+        ////}
+        //////}
+
+        //////27 Vector/Raster Demo p2 {
+        ////public static void DrawPoint(Point p)
+        ////{
+        ////    Console.Write(".");
+        ////}
+        ////private static readonly List<VectorObject> vectorObjects
+        ////    = new List<VectorObject>
+        ////    {
+        ////        new VectorRectangle(1,1,10,10),
+        ////        new VectorRectangle(3,3,6,6)
+        ////    };
+        ////private static void Draw()
+        ////{
+        ////    foreach (var vo in vectorObjects)
+        ////    {
+        ////        foreach (var line in vo)
+        ////        {
+        ////            var adapter = new LineToPointAdapter(line);
+        ////            adapter.ForEach(DrawPoint);
+        ////        }
+        ////    }
+        ////}
+        //////28 Adapter Caching p2{
+        ////public static void DrawPoint2(Point2 p)
+        ////{
+        ////    Console.Write(".");
+        ////}
+        ////private static readonly List<VectorObject2> vectorObjects2
+        ////    = new List<VectorObject2>
+        ////    {
+        ////        new VectorRectangle2(1,1,10,10),
+        ////        new VectorRectangle2(3,3,6,6)
+        ////    };
+        ////private static void Draw2()
+        ////{
+        ////    foreach (var vo in vectorObjects2)
+        ////    {
+        ////        foreach (var line in vo)
+        ////        {
+        ////            var adapter = new LineToPointAdapter2(line);
+        ////            adapter.ForEach(DrawPoint2);
+        ////        }
+        ////    }
+        ////}
+        //////}
+        //////42 Repeating User Names p2{
+        ////[Test]
+        ////public void TestUser()
+        ////{
+        ////    var firstNames = Enumerable.Range(0, 100).Select(_ => RandomString());
+        ////    var lastNames = Enumerable.Range(0, 100).Select(_ => RandomString());
+
+        ////    var users = new List<User>();
+
+        ////    foreach (var firstName in firstNames)
+        ////    {
+        ////        foreach (var lastName in lastNames)
+        ////        {
+        ////            users.Add(new User($"{firstName} {lastName}"));
+        ////        }
+        ////    }
+        ////    ForceGC();
+
+        ////    dotMemory.Check(memory =>
+        ////    {
+        ////        Console.WriteLine(memory.SizeInBytes);
+        ////    });
+        ////}
+
+        ////private void ForceGC()
+        ////{
+        ////    GC.Collect();
+        ////    GC.WaitForPendingFinalizers();
+        ////    GC.Collect();
+        ////}
+        ////private string RandomString()
+        ////{
+        ////    Random rand = new Random();
+        ////    return new string(Enumerable.Range(0, 10).Select(i => (char)('a' + rand.Next(26))).ToArray());
+        ////}
+        ////// }
+        ////56, 57 Handmade Interpreter: Lexing - Parsing p2 {
+        //static List<Token> Lex(string input)
         //{
-        //    var relations = relationshps.relationsPublic;
-        //    foreach (var r in relations.Where(
-        //        x => x.Item1.Name == "John" &&
-        //        x.Item2 == Relationship.Parent
-        //        ))
+        //    var result = new List<Token>();
+        //    for (int i = 0; i < input.Length; i++)
         //    {
-        //        Console.WriteLine($"Johnk has a child called {r.Item3.Name}");
+        //        switch (input[i])
+        //        {
+        //            case '+':
+        //                result.Add(new Token(Token.Type.Plus, "+"));
+        //                break;
+        //            case '-':
+        //                result.Add(new Token(Token.Type.Plus, "-"));
+        //                break;
+        //            case '(':
+        //                result.Add(new Token(Token.Type.Plus, "("));
+        //                break;
+        //            case ')':
+        //                result.Add(new Token(Token.Type.Plus, ")"));
+        //                break;
+        //            default:
+        //                var sb = new StringBuilder(input[i].ToString());
+        //                for (int j = i + 1; j < input.Length; ++j)
+        //                {
+        //                    if (char.IsDigit(input[j]))
+        //                    {
+        //                        sb.Append(input[j]);
+        //                        ++i;
+        //                    }
+        //                    else
+        //                    {
+        //                        result.Add(new Token(Token.Type.Integer, sb.ToString()));
+        //                    }
+        //                }
+        //                break;
+        //        }
         //    }
+        //    return result;
         //}
 
-        ////better way: we can build another constructor, but this time we don't depend on Relationships instead we depend on interface
-        //public Program(IRelationshipBrowser browser)
+        //static IElement Parse(IReadOnlyList<Token> tokens)
         //{
-        //    foreach (var p in browser.FindAllChildrenOf("John"))
+        //    var result = new BinaryOperation();
+        //    bool haveLHS = false;
+        //    for (int i = 0; i < tokens.Count; i++)
         //    {
-        //        Console.WriteLine($"Johnk has a child called {p.Name}");
+        //        var token = tokens[i];
+        //        switch (token.MyType)
+        //        {
+        //            case Token.Type.Integer:
+        //                var integer = new Integer(int.Parse(token.Text));
+        //                if (!haveLHS)
+        //                {
+        //                    result.Left = integer;
+        //                    haveLHS = true; 
+        //                }
+        //                else
+        //                {
+        //                    result.Right = integer;
+        //                }
+        //                break;
+        //            case Token.Type.Plus:
+        //                result.MyType = BinaryOperation.Type.Addition;
+        //                break;
+        //            case Token.Type.Minus:
+        //                result.MyType = BinaryOperation.Type.Subtraction;
+        //                break;
+        //            case Token.Type.Lparen:
+        //                int j = i;
+        //                for (; j < tokens.Count; ++i)
+        //                    if (tokens[j].MyType == Token.Type.Rparen)
+        //                        break;
+        //                var subexpression = tokens.Skip(i + 1).Take(j - i - 1).ToList();
+        //                var element = Parse(subexpression);
+        //                if (!haveLHS)
+        //                {
+        //                    result.Left = element;
+        //                    haveLHS = true;
+        //                }
+        //                else
+        //                {
+        //                    result.Right = element;
+        //                }
+        //                break;             
+        //            default:
+        //                throw new ArgumentOutOfRangeException();
+
+        //        }
         //    }
+        //    return result;
         //}
         ////}
 
-        ////27 Vector/Raster Demo p2 {
-        //public static void DrawPoint(Point p)
-        //{
-        //    Console.Write(".");
-        //}
-        //private static readonly List<VectorObject> vectorObjects
-        //    = new List<VectorObject>
-        //    {
-        //        new VectorRectangle(1,1,10,10),
-        //        new VectorRectangle(3,3,6,6)
-        //    };
-        //private static void Draw()
-        //{
-        //    foreach (var vo in vectorObjects)
-        //    {
-        //        foreach (var line in vo)
-        //        {
-        //            var adapter = new LineToPointAdapter(line);
-        //            adapter.ForEach(DrawPoint);
-        //        }
-        //    }
-        //}
-        ////28 Adapter Caching p2{
-        //public static void DrawPoint2(Point2 p)
-        //{
-        //    Console.Write(".");
-        //}
-        //private static readonly List<VectorObject2> vectorObjects2
-        //    = new List<VectorObject2>
-        //    {
-        //        new VectorRectangle2(1,1,10,10),
-        //        new VectorRectangle2(3,3,6,6)
-        //    };
-        //private static void Draw2()
-        //{
-        //    foreach (var vo in vectorObjects2)
-        //    {
-        //        foreach (var line in vo)
-        //        {
-        //            var adapter = new LineToPointAdapter2(line);
-        //            adapter.ForEach(DrawPoint2);
-        //        }
-        //    }
-        //}
-        ////}
-        ////42 Repeating User Names p2{
-        //[Test]
-        //public void TestUser()
-        //{
-        //    var firstNames = Enumerable.Range(0, 100).Select(_ => RandomString());
-        //    var lastNames = Enumerable.Range(0, 100).Select(_ => RandomString());
-
-        //    var users = new List<User>();
-
-        //    foreach (var firstName in firstNames)
-        //    {
-        //        foreach (var lastName in lastNames)
-        //        {
-        //            users.Add(new User($"{firstName} {lastName}"));
-        //        }
-        //    }
-        //    ForceGC();
-
-        //    dotMemory.Check(memory =>
-        //    {
-        //        Console.WriteLine(memory.SizeInBytes);
-        //    });
-        //}
-
-        //private void ForceGC()
-        //{
-        //    GC.Collect();
-        //    GC.WaitForPendingFinalizers();
-        //    GC.Collect();
-        //}
-        //private string RandomString()
-        //{
-        //    Random rand = new Random();
-        //    return new string(Enumerable.Range(0, 10).Select(i => (char)('a' + rand.Next(26))).ToArray());
-        //}
-        //// }
-        //56, 57 Handmade Interpreter: Lexing - Parsing p2 {
-        static List<Token> Lex(string input)
-        {
-            var result = new List<Token>();
-            for (int i = 0; i < input.Length; i++)
-            {
-                switch (input[i])
-                {
-                    case '+':
-                        result.Add(new Token(Token.Type.Plus, "+"));
-                        break;
-                    case '-':
-                        result.Add(new Token(Token.Type.Plus, "-"));
-                        break;
-                    case '(':
-                        result.Add(new Token(Token.Type.Plus, "("));
-                        break;
-                    case ')':
-                        result.Add(new Token(Token.Type.Plus, ")"));
-                        break;
-                    default:
-                        var sb = new StringBuilder(input[i].ToString());
-                        for (int j = i + 1; j < input.Length; ++j)
-                        {
-                            if (char.IsDigit(input[j]))
-                            {
-                                sb.Append(input[j]);
-                                ++i;
-                            }
-                            else
-                            {
-                                result.Add(new Token(Token.Type.Integer, sb.ToString()));
-                            }
-                        }
-                        break;
-                }
-            }
-            return result;
-        }
-
-        static IElement Parse(IReadOnlyList<Token> tokens)
-        {
-            var result = new BinaryOperation();
-            bool haveLHS = false;
-            for (int i = 0; i < tokens.Count; i++)
-            {
-                var token = tokens[i];
-                switch (token.MyType)
-                {
-                    case Token.Type.Integer:
-                        var integer = new Integer(int.Parse(token.Text));
-                        if (!haveLHS)
-                        {
-                            result.Left = integer;
-                            haveLHS = true; 
-                        }
-                        else
-                        {
-                            result.Right = integer;
-                        }
-                        break;
-                    case Token.Type.Plus:
-                        result.MyType = BinaryOperation.Type.Addition;
-                        break;
-                    case Token.Type.Minus:
-                        result.MyType = BinaryOperation.Type.Subtraction;
-                        break;
-                    case Token.Type.Lparen:
-                        int j = i;
-                        for (; j < tokens.Count; ++i)
-                            if (tokens[j].MyType == Token.Type.Rparen)
-                                break;
-                        var subexpression = tokens.Skip(i + 1).Take(j - i - 1).ToList();
-                        var element = Parse(subexpression);
-                        if (!haveLHS)
-                        {
-                            result.Left = element;
-                            haveLHS = true;
-                        }
-                        else
-                        {
-                            result.Right = element;
-                        }
-                        break;             
-                    default:
-                        throw new ArgumentOutOfRangeException();
- 
-                }
-            }
-            return result;
-        }
-        //}
+        
     }
 
 

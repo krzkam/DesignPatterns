@@ -130,6 +130,7 @@
     <Compile Include="Flyweight\RepeatingUserNames.cs" />
     <Compile Include="Flyweight\TextFormatting.cs" />
     <Compile Include="Interpreter\HandmadeInterpreterLexing-Parsing.cs" />
+    <Compile Include="Iterator\IteratorObject.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Prototype\CopyContstructors.cs" />
