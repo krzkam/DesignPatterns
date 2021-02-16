@@ -9,6 +9,10 @@ using Autofac.Features.Metadata;
 using MoreLinq;
 using NUnit.Framework;
 using JetBrains.dotMemoryUnit;
+using MediatR;
+using System.Threading;
+
+
 //using DesignPatterns.Bridge;
 //using MoreLinq.Extensions;
 //using DesignPatterns.TheSOLIDDesignPrinciples;
@@ -24,7 +28,8 @@ using JetBrains.dotMemoryUnit;
 //using DesignPatterns.ChainOfResponsibility;
 //using DesignPatterns.Command;
 //using DesignPatterns.Interpreter;
-using DesignPatterns.Iterator;
+//using DesignPatterns.Iterator;
+using DesignPatterns.Mediator;
 
 namespace DesignPatterns
 {
@@ -658,6 +663,55 @@ namespace DesignPatterns
             //    Console.WriteLine(node.Value);
 
             //61 Array-Backed Properties
+
+            //Mediator - a component that facilitates communication between other componens without them necessarily being aware of each other or having direct (reference) access to each other
+            //62 Chat Room {
+            //var room = new ChatRoom();
+
+            //var john = new Person("John");
+            //var jane = new Person("Jane");
+
+            //room.Join(john);
+            //room.Join(jane);
+
+
+            //john.Say("hi");
+            //john.Say("oh, hey john");
+
+            //var simon = new Person("Simon");
+            //room.Join(simon);
+            //simon.Say("hi everyone!");
+
+            //jane.PrivateMessage("Simon", "glad you could join us");
+
+            //}
+
+            //63 Event Broker {
+            //var cb = new ContainerBuilder();
+            //cb.RegisterType<EventBroker>().SingleInstance();
+            //cb.RegisterType<FootbalCoach>();
+            //cb.Register((c,p)=>
+            //    new FootbalPlayer(
+            //        c.Resolve<EventBroker>(),
+            //        p.Named<string>("name")
+            //        ));
+
+            //using (var c = cb.Build())
+            //{
+            //    var coach = c.Resolve<FootbalCoach>();
+            //    var player1 = c.Resolve<FootbalPlayer>(new NamedParameter("name","John"));
+            //    var player2 = c.Resolve<FootbalPlayer>(new NamedParameter("name", "Chris"));
+
+            //    player1.Score();
+            //    player1.Score();
+            //    player1.Score();
+            //    player1.AssautlReferee();
+            //    player2.Score();
+            //}
+            //}
+
+            //64 Introduction to MediatR  
+ 
             Console.ReadKey();
 
 
@@ -864,8 +918,8 @@ namespace DesignPatterns
         //    return result;
         //}
         ////}
+ 
 
-        
     }
 
 
