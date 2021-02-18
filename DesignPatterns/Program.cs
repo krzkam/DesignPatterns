@@ -30,7 +30,8 @@ using System.Threading;
 //using DesignPatterns.Interpreter;
 //using DesignPatterns.Iterator;
 //using DesignPatterns.Mediator;
-using DesignPatterns.Memento;
+//using DesignPatterns.Memento;
+using DesignPatterns.NullObject;
 
 namespace DesignPatterns
 {
@@ -741,11 +742,25 @@ namespace DesignPatterns
             //Console.WriteLine($"Redo 1: {ba}");
 
             //}
-            //67 Memento for Interop {
 
+            //Null Object - building an object that conforms to the requeired interface, satisfying a dependency requirement of some other object but does nothing at all
+            //67 Null Object {
+            //var log = new ConsoleLog();
+            //var ba = new BankAccount(null);
+            //ba.Deposit(100);
+            var cb = new ContainerBuilder();
+
+            cb.RegisterType<BankAccount>();
+            cb.RegisterType<NullLog>().As<ILog>();
+            using (var c = cb.Build())
+            {
+                var ba = c.Resolve<BankAccount>();
+                ba.Deposit(100);
+            }
             //}
 
-            Console.ReadKey();
+
+                Console.ReadKey();
 
 
         }

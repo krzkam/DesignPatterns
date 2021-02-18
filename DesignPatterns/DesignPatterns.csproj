@@ -142,6 +142,7 @@
     <Compile Include="Mediator\EventBroker.cs" />
     <Compile Include="Mediator\MediatR.cs" />
     <Compile Include="Memento\Memento-UndoAndRedo.cs" />
+    <Compile Include="NullObject\NullObject.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Prototype\CopyContstructors.cs" />
