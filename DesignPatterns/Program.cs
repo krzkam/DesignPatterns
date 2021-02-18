@@ -31,7 +31,7 @@ using System.Threading;
 //using DesignPatterns.Iterator;
 //using DesignPatterns.Mediator;
 //using DesignPatterns.Memento;
-using DesignPatterns.NullObject;
+//using DesignPatterns.NullObject;
 
 namespace DesignPatterns
 {
@@ -744,23 +744,35 @@ namespace DesignPatterns
             //}
 
             //Null Object - building an object that conforms to the requeired interface, satisfying a dependency requirement of some other object but does nothing at all
-            //67 Null Object {
-            //var log = new ConsoleLog();
-            //var ba = new BankAccount(null);
-            //ba.Deposit(100);
-            var cb = new ContainerBuilder();
+            ////67 Null Object {
+            ////var log = new ConsoleLog();
+            ////var ba = new BankAccount(null);
+            ////ba.Deposit(100);
+            //var cb = new ContainerBuilder();
 
-            cb.RegisterType<BankAccount>();
-            cb.RegisterType<NullLog>().As<ILog>();
-            using (var c = cb.Build())
-            {
-                var ba = c.Resolve<BankAccount>();
-                ba.Deposit(100);
-            }
+            //cb.RegisterType<BankAccount>();
+            //cb.RegisterType<NullLog>().As<ILog>();
+            //using (var c = cb.Build())
+            //{
+            //    var ba = c.Resolve<BankAccount>();
+            //    ba.Deposit(100);
+            //}
+            ////}
+            //// 68 Dynamic Null Object {
+            //var log = Null<ILog>.Instance;
+            //log.Info("dasda");
+            //var ba = new BankAccount(log);
+            //ba.Deposit(100);
+
+            ////}
+
+            //Observer
+            //69 Observer via the 'event' Keyword {
+
             //}
 
 
-                Console.ReadKey();
+            Console.ReadKey();
 
 
         }

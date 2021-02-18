@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Dynamic;
+using ImpromptuInterface;
 
 namespace DesignPatterns.NullObject
 {
@@ -53,6 +55,24 @@ namespace DesignPatterns.NullObject
         public void Warn(string msg)
         {
 
+        }
+    }
+
+    //Dynamic Null Object
+    public class Null<TInterface>:DynamicObject where TInterface : class
+    {
+        public static TInterface Instance
+        {
+            get
+            {
+                return new Null<TInterface>().ActLike<TInterface>();
+            }
+        }
+
+        public override bool TryInvokeMember(InvokeMemberBinder binder, object[] args, out object result)
+        {
+            result = Activator.CreateInstance(binder.ReturnType);
+            return true;
         }
     }
 }
