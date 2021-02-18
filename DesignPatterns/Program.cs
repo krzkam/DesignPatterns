@@ -29,7 +29,8 @@ using System.Threading;
 //using DesignPatterns.Command;
 //using DesignPatterns.Interpreter;
 //using DesignPatterns.Iterator;
-using DesignPatterns.Mediator;
+//using DesignPatterns.Mediator;
+using DesignPatterns.Memento;
 
 namespace DesignPatterns
 {
@@ -711,7 +712,39 @@ namespace DesignPatterns
             //}
 
             //64 Introduction to MediatR  
- 
+
+            //Memento - A token/handle representing the system state. Lets us roll back to the state when the token was generated. May or may not directly expose state information.
+            ////65 Memento {
+
+            //var ba = new BankAccount(100);
+            //var m1 = ba.Deposit(50); //150
+            //var m2 = ba.Deposit(25); //175
+            //Console.WriteLine(ba);
+
+            //ba.Restore(m1);
+            //Console.WriteLine(ba);
+
+            //ba.Restore(m2);
+            //Console.WriteLine(ba);
+            ////}
+            //66 Undo and Redo {
+            //var ba = new BankAccount(100);
+            //ba.Deposit(50);
+            //ba.Deposit(25);
+            //Console.WriteLine(ba);
+
+            //ba.Undo();
+            //Console.WriteLine($"undo 1: {ba}");
+            //ba.Undo();
+            //Console.WriteLine($"undo 2: {ba}");
+            //ba.Redo();
+            //Console.WriteLine($"Redo 1: {ba}");
+
+            //}
+            //67 Memento for Interop {
+
+            //}
+
             Console.ReadKey();
 
 
