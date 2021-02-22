@@ -10,7 +10,8 @@ using MoreLinq;
 using NUnit.Framework;
 using JetBrains.dotMemoryUnit;
 using MediatR;
-using System.Threading;
+using System.Threading; 
+using System.Reactive.Linq;
 
 
 //using DesignPatterns.Bridge;
@@ -37,11 +38,12 @@ using DesignPatterns.Observer;
 namespace DesignPatterns
 {
     //[TestFixture]
-    class Program
+    //
+    class Program //Observer via Special Interfaces p2 : IObserver<Event> 
     {
 
-
-        static void Main(string[] args)
+ 
+        static void Main(string[] args)   
         ////12 Asynchronous Factory Method p2 {
         //public static async Task Main(string[] args)
         {
@@ -790,7 +792,10 @@ namespace DesignPatterns
             //FireGC();
             //Console.WriteLine($"Is the window alive after GC? {windowRef.IsAlive}");
             //}
-
+            //71 Observer via Special Interfaces p1 {
+            // Rx
+            // IObserver IObservable
+            //}
             Console.ReadKey();
 
 
@@ -997,7 +1002,7 @@ namespace DesignPatterns
         //    return result;
         //}
         ////}
-        ////69 Observer via the 'event' Keyword p1 {
+        ////69 Observer via the 'event' Keyword p2 {
         //private static void CallDoctor(object sender, FallsIllEventArgs eventArgs)
         //{
         //    Console.WriteLine($"A doctor has been called to {eventArgs.Address}");
@@ -1013,6 +1018,27 @@ namespace DesignPatterns
         //    Console.WriteLine("GC is done");
         //}
         //}
+        ////71 Observer via Special Interfaces p3 {
+        //public Program()
+        //{
+        //    var person = new Person2();
+        //    var sub = person.Subscribe(this);
+
+        //    person.OfType<FallsIllEvent>()
+        //      .Subscribe(args => Console.WriteLine($"A doctor has been called to {args.Address}"));
+        //}
+
+        //public void OnNext(Event value)
+        //{
+        //    if (value is FallsIllEvent args)
+        //        Console.WriteLine($"A doctor has been called to {args.Address}");
+        //}
+
+        //public void OnError(Exception error) { }
+        //public void OnCompleted() { }
+        ////}
+
+
     }
 
 
