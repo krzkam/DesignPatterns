@@ -32,11 +32,12 @@ using System.Threading;
 //using DesignPatterns.Mediator;
 //using DesignPatterns.Memento;
 //using DesignPatterns.NullObject;
+using DesignPatterns.Observer;
 
 namespace DesignPatterns
 {
     //[TestFixture]
-    class Program 
+    class Program
     {
 
 
@@ -766,11 +767,29 @@ namespace DesignPatterns
 
             ////}
 
-            //Observer
-            //69 Observer via the 'event' Keyword {
+            //Observer - an observer is an object that wishes to be informed about events happening in the system. The entity generating the events is an observable.
+            ////69 Observer via the 'event' Keyword p1 {
+            //var person = new Person();
 
+            //person.FallsIll += CallDoctor;
+
+            //person.CatchACold();
+
+            //person.FallsIll -= CallDoctor;
+            ////}
+            //70 Weak Event Pattern p1 {
+            //var btn = new Button();
+            //var window = new Window(btn);
+            //var windowRef = new WeakReference(window);
+
+            //btn.Fire();
+
+            //Console.WriteLine("Setting window to null");
+            //window = null;
+
+            //FireGC();
+            //Console.WriteLine($"Is the window alive after GC? {windowRef.IsAlive}");
             //}
-
 
             Console.ReadKey();
 
@@ -978,8 +997,22 @@ namespace DesignPatterns
         //    return result;
         //}
         ////}
- 
-
+        ////69 Observer via the 'event' Keyword p1 {
+        //private static void CallDoctor(object sender, FallsIllEventArgs eventArgs)
+        //{
+        //    Console.WriteLine($"A doctor has been called to {eventArgs.Address}");
+        //}
+        ////}
+        //70 Weak Event Pattern p2 {
+        //private static void FireGC()
+        //{
+        //    Console.WriteLine("Starting GC");
+        //    GC.Collect();
+        //    GC.WaitForPendingFinalizers();
+        //    GC.Collect();
+        //    Console.WriteLine("GC is done");
+        //}
+        //}
     }
 
 
