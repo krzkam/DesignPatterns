@@ -145,6 +145,7 @@
     <Compile Include="Memento\Memento-UndoAndRedo.cs" />
     <Compile Include="NullObject\NullObject.cs" />
     <Compile Include="Observer\BidirectionalObserver.cs" />
+    <Compile Include="Observer\DeclarativeEventSubscriptionsWithInterfaces.cs" />
     <Compile Include="Observer\ObservableCollections.cs" />
     <Compile Include="Observer\ObserverViaSpecialInterfaces.cs" />
     <Compile Include="Observer\ObserverViaTheEventKeyword.cs" />
