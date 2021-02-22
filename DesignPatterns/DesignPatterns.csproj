@@ -144,8 +144,11 @@
     <Compile Include="Mediator\MediatR.cs" />
     <Compile Include="Memento\Memento-UndoAndRedo.cs" />
     <Compile Include="NullObject\NullObject.cs" />
+    <Compile Include="Observer\BidirectionalObserver.cs" />
+    <Compile Include="Observer\ObservableCollections.cs" />
     <Compile Include="Observer\ObserverViaSpecialInterfaces.cs" />
     <Compile Include="Observer\ObserverViaTheEventKeyword.cs" />
+    <Compile Include="Observer\PropertyDependencies.cs" />
     <Compile Include="Observer\WeakEventPattern.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

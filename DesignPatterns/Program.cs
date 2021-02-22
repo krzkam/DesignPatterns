@@ -12,6 +12,8 @@ using JetBrains.dotMemoryUnit;
 using MediatR;
 using System.Threading; 
 using System.Reactive.Linq;
+using System.ComponentModel;
+ 
 
 
 //using DesignPatterns.Bridge;
@@ -34,6 +36,7 @@ using System.Reactive.Linq;
 //using DesignPatterns.Memento;
 //using DesignPatterns.NullObject;
 using DesignPatterns.Observer;
+using System.ComponentModel;
 
 namespace DesignPatterns
 {
@@ -796,6 +799,84 @@ namespace DesignPatterns
             // Rx
             // IObserver IObservable
             //}
+            ////72 Observable Collections {
+            //Market market = new Market();
+            ////      market.PriceAdded += (sender, eventArgs) =>
+            ////      {
+            ////        Console.WriteLine($"Added price {eventArgs.Price}");
+            ////      };
+            ////      market.AddPrice(123);
+            //market.Prices.ListChanged += (sender, eventArgs) => // Subscribe
+            //{
+            //    if (eventArgs.ListChangedType == ListChangedType.ItemAdded)
+            //    {
+            //        Console.WriteLine($"Added price {((BindingList<float>)sender)[eventArgs.NewIndex]}");
+            //    }
+            //};
+            //market.AddPrice(123);
+            //// 1) How do we know when a new item becomes available?
+
+            //// 2) how do we know when the market is done supplying items?
+            //// maybe you are trading a futures contract that expired and there will be no more prices
+
+            //// 3) What happens if the market feed is broken?
+            ////}
+            ////73 Bidirectional Observer {
+
+            //var product = new Product { Name = "Book" };
+            //var window = new Window2(product);
+
+            //// want to ensure that when product name changes
+            //// in one component, it also changes in another
+
+            //// product.PropertyChanged += (sender, eventArgs) =>
+            //// {
+            ////   if (eventArgs.PropertyName == "Name")
+            ////   {
+            ////     Console.WriteLine("Name changed in Product");
+            ////     window.ProductName = product.Name;
+            ////   }
+            //// };
+            ////
+            //// window.PropertyChanged += (sender, eventArgs) =>
+            //// {
+            ////   if (eventArgs.PropertyName == "ProductName")
+            ////   {
+            ////     Console.WriteLine("Name changed in Window");
+            ////     product.Name = window.ProductName;
+            ////   }
+            //// };
+
+            //using (var binding = new BidirectionalBinding(
+            //  product,
+            //  () => product.Name,
+            //  window,
+            //  () => window.ProductName
+            //  ));
+
+
+
+
+            //// there is no infinite loop because of
+            //// self-assignment guard
+            //product.Name = "Table";
+            //window.ProductName = "Chair";
+
+            //Console.WriteLine(product);
+            //Console.WriteLine(window);
+
+            ////}
+            //74 Property Dependencies {
+            //var p = new Person3();
+            //p.PropertyChanged += (sender, eventArgs) =>
+            //{
+            //    Console.WriteLine($"{eventArgs.PropertyName} has changed");
+            //};
+            //p.Age = 15; // should not really affect CanVote :)
+            //p.Citizen = true;
+            //}
+
+
             Console.ReadKey();
 
 
